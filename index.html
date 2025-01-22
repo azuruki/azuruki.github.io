@@ -4,15 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./output.css" rel="stylesheet">
+
     <title>Cosplay Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <style>
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out forwards;
+        }
+
+        /* Efecto de escala al hacer clic */
+        .clicked {
+            transform: scale(0.95);
+            transition: transform 0.2s ease;
+        }
+
+        /* Al pasar el mouse por encima del botón */
+        .social-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
 <body class="font-sans bg-gray-50">
     <!-- Header Section -->
     <header class="hero bg-gradient-to-r from-purple-500 to-pink-500 text-white text-center py-20">
         <div class="container mx-auto px-4">
-            <h1 class="text-5xl font-bold drop-shadow-lg">Bienvenida al mundo de Azurukisan</h1>
+            <h1 class="text-5xl font-bold drop-shadow-lg">Bienvenido al mundo de Azurukisan</h1>
             <p class="text-xl mt-4 font-light">Un recorrido por su pasión por el cosplay</p>
             <a href="#portfolio" class="btn bg-white text-purple-600 px-6 py-3 rounded-full mt-8 inline-block shadow-lg hover:bg-purple-600 hover:text-white transition transform hover:scale-105">Ver Portafolio</a>
         </div>
@@ -62,33 +91,86 @@
                         <span class="text-white text-lg font-medium">Makima</span>
                     </div>
                 </div>
-                <!-- Agrega más imágenes según necesites -->
+                <div class="relative group">
+                    <img src = "images/Bocchi.jpg" alt="Cosplay 4" class="rounded-lg shadow-lg transform group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-purple-600 bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <span class="text-white text-lg font-medium">Bocchi</span>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <img src="images/Kobeni.jpg" alt="Cosplay 5" class="rounded-lg shadow-lg transform group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-purple-600 bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <span class="text-white text-lg font-medium">Kobeni</span>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <img src="images/KrulTepes.jpg" alt="Cosplay 6" class="rounded-lg shadow-lg transform group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-purple-600 bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <span class="text-white text-lg font-medium">Krul Tepes</span>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <img src="images/Mitsuri.jpg" alt="Cosplay 7" class="rounded-lg shadow-lg transform group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-purple-600 bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <span class="text-white text-lg font-medium">Mitsuri</span>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <img src="images/Reze.jpg" alt="Cosplay 8" class="rounded-lg shadow-lg transform group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-purple-600 bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <span class="text-white text-lg font-medium">Reze</span>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <img src="images/Yumeko.jpg" alt="Cosplay 9" class="rounded-lg shadow-lg transform group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-purple-600 bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <span class="text-white text-lg font-medium">Yumeko</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Social Links Section -->
-    <section id="social" class="social py-16 bg-white">
+    
+
+    <!-- Sección de Redes Sociales -->
+    <section id="social" class="social py-16 bg-gray-50">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl font-semibold text-purple-600">¡Sígueme en mis redes!</h2>
-            <p class="text-gray-600 mt-4">Mantente al día con mis últimos proyectos y sesiones de cosplay:</p>
-            <div class="social-links flex justify-center gap-8 mt-10">
-                <a href="https://instagram.com" target="_blank" class="text-gray-600 hover:text-purple-600 transition text-2xl">
-                    <i class="fab fa-instagram"></i>
+            <h2 class="text-3xl font-semibold text-purple-600">¡Sígueme en mis redes!🖤</h2>
+            <div class="social-links flex justify-center gap-4 mt-8">
+                <a href="https://instagram.com/azurukisan" target="_blank" 
+                   class="social-button inline-block px-6 py-3 bg-purple-600 text-white font-bold text-lg uppercase rounded-lg transform transition-all duration-300 ease-in-out hover:scale-110 hover:bg-purple-700 hover:shadow-lg active:scale-95">
+                   Instagram
                 </a>
-                <a href="https://tiktok.com" target="_blank" class="text-gray-600 hover:text-purple-600 transition text-2xl">
-                    <i class="fab fa-tiktok"></i>
+
+                <a href="https://tiktok.com/@azurukisan_" target="_blank" 
+                   class="social-button inline-block px-6 py-3 bg-purple-600 text-white font-bold text-lg uppercase rounded-lg transform transition-all duration-300 ease-in-out hover:scale-110 hover:bg-purple-700 hover:shadow-lg active:scale-95">
+                   TikTok
                 </a>
-                <a href="mailto:email@example.com" class="text-gray-600 hover:text-purple-600 transition text-2xl">
-                    <i class="fas fa-envelope"></i>
+
+                <a href="https://twitter.com/azurukisan_" target="_blank" 
+                   class="social-button inline-block px-6 py-3 bg-purple-600 text-white font-bold text-lg uppercase rounded-lg transform transition-all duration-300 ease-in-out hover:scale-110 hover:bg-purple-700 hover:shadow-lg active:scale-95">
+                   Twitter
+                </a>
+
+                <a href="mailto:email@example.com" 
+                   class="social-button inline-block px-6 py-3 bg-purple-600 text-white font-bold text-lg uppercase rounded-lg transform transition-all duration-300 ease-in-out hover:scale-110 hover:bg-purple-700 hover:shadow-lg active:scale-95">
+                   Contacto
                 </a>
             </div>
         </div>
-    </section>
+    
 
-    <!-- Footer -->
-    <footer class="footer bg-gray-900 text-white py-6 text-center">
-        <p class="text-sm">Hecho con ❤️ por <span class="font-bold">San</span></p>
-    </footer>
+
+
+    
+    
+<!-- Footer -->
+<footer class="footer bg-gray-900 text-white py-6 text-center mt-10">
+    <p class="text-sm">Hecho con ❤️ por <span class="font-bold">San</span></p>
+</footer>
+
+
+    <script src="./script.js"></script>
 </body>
 </html>
