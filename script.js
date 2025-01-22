@@ -29,7 +29,7 @@ images.forEach(image => {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    const title = document.querySelector(".text-5xl");
+    const title = document.querySelector(".text-6xl");
     
     // Divide el texto en letras y respeta los espacios entre palabras
     const text = title.textContent;
