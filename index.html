@@ -8,54 +8,87 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
 </head>
-<body class="font-sans bg-gray-100">
+<body class="font-sans bg-gray-50">
     <!-- Header Section -->
-    <header class="hero bg-gradient-to-r from-purple-500 to-pink-500 text-white text-center py-16">
-        <div class="container mx-auto">
-            <h1 class="text-4xl font-bold">Bienvenida al mundo de Azurukisan</h1>
-            <p class="text-lg mt-4">Un recorrido por su pasión por el cosplay</p>
-            <a href="#portfolio" class="btn bg-white text-purple-600 px-4 py-2 rounded-lg mt-6 inline-block shadow-lg">Ver Portafolio</a>
+    <header class="hero bg-gradient-to-r from-purple-500 to-pink-500 text-white text-center py-20">
+        <div class="container mx-auto px-4">
+            <h1 class="text-5xl font-bold drop-shadow-lg">Bienvenida al mundo de Azurukisan</h1>
+            <p class="text-xl mt-4 font-light">Un recorrido por su pasión por el cosplay</p>
+            <a href="#portfolio" class="btn bg-white text-purple-600 px-6 py-3 rounded-full mt-8 inline-block shadow-lg hover:bg-purple-600 hover:text-white transition transform hover:scale-105">Ver Portafolio</a>
         </div>
     </header>
-    <!-- Navbaroghsdofsdpfosdpf -->
+
+    <!-- Navbar Section -->
+    <nav class="navbar bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center px-4 py-3">
+            <div class="text-xl font-bold text-purple-600">Azuruki</div>
+            <ul class="flex space-x-6 text-gray-700 font-medium">
+                <li><a href="#about" class="hover:text-purple-500 transition">Sobre mí</a></li>
+                <li><a href="#portfolio" class="hover:text-purple-500 transition">Portafolio</a></li>
+                <li><a href="#social" class="hover:text-purple-500 transition">Redes</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <!-- About Section -->
     <section id="about" class="about py-16">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-semibold text-center text-purple-600">Sobre mí</h2>
-            <p class="mt-4 text-center text-gray-700">Hola, soy Azurukisan, una apasionada del cosplay desde 2021. Me encanta dar vida a mis personajes favoritos con creatividad y dedicación. ¡Gracias por visitar mi página!</p>
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-semibold text-purple-600">Sobre mí</h2>
+            <p class="mt-6 text-lg text-gray-700 leading-relaxed">Hola, soy <span class="font-bold">Azurukisan</span>, una apasionada del cosplay desde 2021. Me encanta dar vida a mis personajes favoritos con creatividad y dedicación. Cada cosplay cuenta una historia, y mi objetivo es compartirla contigo. ¡Gracias por visitar mi página!</p>
         </div>
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio py-16 bg-white">
+    <section id="portfolio" class="portfolio py-16 bg-gray-100">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-semibold text-center text-purple-600">Mi Portafolio</h2>
-            <div class="gallery grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-8">
-                <img src="images/Momo.jpg" alt="Cosplay 1" class="rounded-lg shadow-md">
-                <img src="images/Nobara.jpg" alt="Cosplay 2" class="rounded-lg shadow-md">
-                <img src="images/Makima.jpg" alt="Cosplay 3" class="rounded-lg shadow-md">
+            <h2 class="text-4xl font-semibold text-center text-purple-600">Mi Portafolio</h2>
+            <p class="text-center text-gray-600 mt-4">Explora algunos de mis mejores trabajos de cosplay:</p>
+            <div class="gallery grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-10">
+                <div class="relative group">
+                    <img src="images/Momo.jpg" alt="Cosplay 1" class="rounded-lg shadow-lg transform group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-purple-600 bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <span class="text-white text-lg font-medium">Momo Yaoyorozu</span>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <img src="images/Nobara.jpg" alt="Cosplay 2" class="rounded-lg shadow-lg transform group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-purple-600 bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <span class="text-white text-lg font-medium">Nobara Kugisaki</span>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <img src="images/Makima.jpg" alt="Cosplay 3" class="rounded-lg shadow-lg transform group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-purple-600 bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <span class="text-white text-lg font-medium">Makima</span>
+                    </div>
+                </div>
                 <!-- Agrega más imágenes según necesites -->
             </div>
         </div>
     </section>
 
     <!-- Social Links Section -->
-    <section id="social" class="social py-16 bg-gray-50">
+    <section id="social" class="social py-16 bg-white">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-semibold text-purple-600">¡Sígueme en mis redes!</h2>
-            <div class="social-links flex justify-center gap-4 mt-8">
-                <a href="https://instagram.com" target="_blank" class="text-purple-500 hover:text-purple-700">Instagram</a>
-                <a href="https://tiktok.com" target="_blank" class="text-purple-500 hover:text-purple-700">TikTok</a>
-                <a href="mailto:email@example.com" class="text-purple-500 hover:text-purple-700">Contacto</a>
+            <h2 class="text-4xl font-semibold text-purple-600">¡Sígueme en mis redes!</h2>
+            <p class="text-gray-600 mt-4">Mantente al día con mis últimos proyectos y sesiones de cosplay:</p>
+            <div class="social-links flex justify-center gap-8 mt-10">
+                <a href="https://instagram.com" target="_blank" class="text-gray-600 hover:text-purple-600 transition text-2xl">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://tiktok.com" target="_blank" class="text-gray-600 hover:text-purple-600 transition text-2xl">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="mailto:email@example.com" class="text-gray-600 hover:text-purple-600 transition text-2xl">
+                    <i class="fas fa-envelope"></i>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer bg-gray-900 text-white py-4 text-center">
-        <p>Hecho con ❤️ por San</p>
+    <footer class="footer bg-gray-900 text-white py-6 text-center">
+        <p class="text-sm">Hecho con ❤️ por <span class="font-bold">San</span></p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
