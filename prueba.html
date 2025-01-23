@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+    <link rel="icon" href="/images/ico.jpeg" type="image/png">
+    <title>Cosplay Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <style>
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out forwards;
+        }
+
+        /* Efecto de escala al hacer clic */
+        .clicked {
+            transform: scale(0.95);
+            transition: transform 0.2s ease;
+        }
+
+        /* Al pasar el mouse por encima del botón */
+        .social-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Header Section -->
+    <header class="hero bg-gradient-to-r from-purple-500 to-pink-500 text-white text-center py-20">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <!-- Logo -->
+            <img src="/images/ico.jpeg" alt="Logo" class="w-40 h-40 md:w-64 md:h-64 rounded-full mb-6 md:mb-0 md:mr-8"> <!-- Ajuste responsivo -->
+
+            <!-- Texto de bienvenida -->
+            <div class="text-center md:text-left flex-1">
+                <h1 class="text-4xl md:text-6xl font-bold drop-shadow-lg">Bienvenido al mundo de Azurukisan</h1>
+                <p class="text-lg md:text-2xl mt-4 font-light">Un recorrido por su pasión por el cosplay</p>
+                <a href="#portfolio" class="btn bg-white text-purple-600 px-6 py-3 rounded-full mt-8 inline-block shadow-lg hover:bg-purple-600 hover:text-white transition transform hover:scale-105">
+                    Ver Portafolio
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navbar Section -->
+    <nav class="navbar bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center px-4 py-3">
+            <div class="text-xl font-bold text-purple-600">Azuruki</div>
+            <ul class="hidden md:flex space-x-6 text-gray-700 font-medium">
+                <li><a href="#about" class="hover:text-purple-500 transition">Sobre mí</a></li>
+                <li><a href="#portfolio" class="hover:text-purple-500 transition">Portafolio</a></li>
+                <li><a href="#social" class="hover:text-purple-500 transition">Redes</a></li>
+            </ul>
+            <!-- Menú responsive -->
+            <button id="menu-toggle" class="block md:hidden text-purple-600 focus:outline-none">
+                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+        <ul id="mobile-menu" class="hidden md:hidden flex-col space-y-4 bg-gray-50 text-gray-700 font-medium px-4 py-2">
+            <li><a href="#about" class="hover:text-purple-500 transition">Sobre mí</a></li>
+            <li><a href="#portfolio" class="hover:text-purple-500 transition">Portafolio</a></li>
+            <li><a href="#social" class="hover:text-purple-500 transition">Redes</a></li>
+        </ul>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about" class="about py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-semibold text-purple-600">Sobre mí</h2>
+            <p class="mt-6 text-lg text-gray-700 leading-relaxed">
+                Hola, soy <span class="font-bold">Azurukisan</span>, una apasionada del cosplay desde 2021. Me encanta dar vida a mis personajes favoritos con creatividad y dedicación. Cada cosplay cuenta una historia, y mi objetivo es compartirla contigo. ¡Gracias por visitar mi página!
+            </p>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-semibold text-center text-purple-600">Mi Portafolio</h2>
+            <p class="text-center text-gray-600 mt-4">Explora algunos de mis mejores trabajos de cosplay:</p>
+            <div class="gallery grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mt-10">
+                <!-- Ejemplo de imagen -->
+                <div class="relative group">
+                    <img src="images/Momo.jpg" alt="Cosplay 1" class="rounded-lg shadow-lg w-full h-auto">
+                    <div class="absolute inset-0 bg-purple-600 bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <span class="text-white text-lg font-medium">Momo Yaoyorozu</span>
+                    </div>
+                </div>
+                <!-- Repetir para más imágenes -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Section -->
+    <section id="social" class="social py-16 bg-gray-50">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-semibold text-purple-600">¡Sígueme en mis redes!🖤</h2>
+            <div class="social-links flex flex-wrap justify-center gap-4 mt-8">
+                <a href="https://instagram.com/azurukisan" target="_blank" class="social-button px-6 py-3 bg-purple-600 text-white font-bold text-lg uppercase rounded-lg hover:bg-purple-700 transition">
+                    Instagram
+                </a>
+                <!-- Más botones de redes -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-gray-900 text-white py-6 text-center mt-10">
+        <p class="text-sm">Hecho con ❤️ por <span class="font-bold">San1190</span></p>
+    </footer>
+
+    <script src="./script.js"></script>
+    <script>
+        // Script para alternar el menú móvil
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

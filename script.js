@@ -29,7 +29,7 @@ images.forEach(image => {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    const title = document.querySelector(".text-6xl");
+    const title = document.querySelector(".text-4xl");
     
     // Divide el texto en letras y respeta los espacios entre palabras
     const text = title.textContent;
@@ -116,3 +116,10 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+  // Script para alternar el menú móvil
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+  });

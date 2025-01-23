@@ -40,34 +40,50 @@
     </style>
 </head>
 <body class="font-sans bg-gray-50">
-<!-- Header Section -->
-    <header class="hero bg-gradient-to-r from-purple-500 to-pink-500 text-white text-center py-20">
-        <div class="container mx-auto px-4 flex items-center justify-between">
-            <!-- Logo más grande -->
-            <img src="/images/ico.jpeg" alt="Logo" class="w-64 h-64 rounded-full mr-8"> <!-- Aquí aumentamos el tamaño del logo -->
 
+    <header class="hero bg-gradient-to-r from-purple-500 to-pink-500 text-white text-center py-20">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <!-- Logo -->
+            <img src="/images/ico.jpeg" alt="Logo" class="w-40 h-40 md:w-64 md:h-64 rounded-full mb-6 md:mb-0 md:mr-8">
+            
             <!-- Texto de bienvenida -->
-            <div class="text-center flex-1">
-                <h1 class="text-6xl font-bold drop-shadow-lg">Bienvenido al mundo de Azurukisan</h1>
-                <p class="text-2xl mt-4 font-light">Un recorrido por su pasión por el cosplay</p>
-                <a href="#portfolio" class="btn bg-white text-purple-600 px-6 py-3 rounded-full mt-8 inline-block shadow-lg hover:bg-purple-600 hover:text-white transition transform hover:scale-105">Ver Portafolio</a>
+            <div class="text-center md:text-left flex-1">
+                <h1 class="text-4xl md:text-6xl font-bold drop-shadow-lg">Bienvenido al mundo de Azurukisan</h1>
+                <p class="text-lg md:text-2xl mt-4 font-light">Un recorrido por su pasión por el cosplay</p>
+                <a href="#portfolio" class="btn bg-white text-purple-600 px-6 py-3 rounded-full mt-8 inline-block shadow-lg hover:bg-purple-600 hover:text-white transition transform hover:scale-105">
+                    Ver Portafolio
+                </a>
             </div>
         </div>
     </header>
+    
 
 
 
-    <!-- Navbar Section -->
     <nav class="navbar bg-white shadow-md sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center px-4 py-3">
             <div class="text-xl font-bold text-purple-600">Azuruki</div>
-            <ul class="flex space-x-6 text-gray-700 font-medium">
+            <!-- Links en pantallas grandes -->
+            <ul class="hidden md:flex space-x-6 text-gray-700 font-medium">
                 <li><a href="#about" class="hover:text-purple-500 transition">Sobre mí</a></li>
                 <li><a href="#portfolio" class="hover:text-purple-500 transition">Portafolio</a></li>
                 <li><a href="#social" class="hover:text-purple-500 transition">Redes</a></li>
             </ul>
+            <!-- Botón de menú para móvil -->
+            <button id="menu-toggle" class="block md:hidden text-purple-600 focus:outline-none">
+                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
         </div>
+        <!-- Links ocultos en móvil -->
+        <ul id="mobile-menu" class="hidden md:hidden flex-col space-y-4 bg-gray-50 text-gray-700 font-medium px-4 py-2">
+            <li><a href="#about" class="hover:text-purple-500 transition">Sobre mí</a></li>
+            <li><a href="#portfolio" class="hover:text-purple-500 transition">Portafolio</a></li>
+            <li><a href="#social" class="hover:text-purple-500 transition">Redes</a></li>
+        </ul>
     </nav>
+
 
     <!-- About Section -->
     <section id="about" class="about py-16">
@@ -147,7 +163,7 @@
     <section id="social" class="social py-16 bg-gray-50">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-3xl font-semibold text-purple-600">¡Sígueme en mis redes!🖤</h2>
-            <div class="social-links flex justify-center gap-4 mt-8">
+            <div class="social-links flex flex-wrap justify-center gap-4 mt-8">
                 <a href="https://instagram.com/azurukisan" target="_blank" 
                    class="social-button inline-block px-6 py-3 bg-purple-600 text-white font-bold text-lg uppercase rounded-lg transform transition-all duration-300 ease-in-out hover:scale-110 hover:bg-purple-700 hover:shadow-lg active:scale-95">
                    Instagram
