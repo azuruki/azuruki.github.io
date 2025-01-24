@@ -116,25 +116,46 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
-const darkModeToggle = document.getElementById("dark-mode-toggle");
-const body = document.body;
+document.addEventListener('DOMContentLoaded', () => {
+  const darkModeToggle = document.getElementById("dark-mode-toggle");
+  const body = document.body;
+  const moonIcon = darkModeToggle.querySelector('span:first-child');
+  const textSpan = darkModeToggle.querySelector('span:last-child');
 
-darkModeToggle.addEventListener("click", () => {
-    // Alternar entre modo oscuro y claro
-    if (body.classList.contains("dark")) {
-        body.classList.remove("dark");
-        darkModeToggle.textContent = "🌙 Modo Oscuro";
-        darkModeToggle.classList.remove("dark:bg-gray-700", "dark:text-white");
-        darkModeToggle.classList.add("bg-gray-700", "text-white");
-    } else {
-        body.classList.add("dark");
-        darkModeToggle.textContent = "☀️ Modo Claro";
-        darkModeToggle.classList.remove("bg-gray-200", "text-purple");
-        darkModeToggle.classList.add("dark:bg-gray-700", "dark:text-white");
-    }
+  // Función para actualizar el estado visual del botón y los iconos
+  function updateDarkModeButton() {
+       if (body.classList.contains("dark")) {
+         moonIcon.textContent = '☀️';
+         textSpan.textContent = '☀️Modo Claro';
+      } else {
+         moonIcon.textContent = '🌙';
+         textSpan.textContent = '🌙Modo Oscuro';
+     }
+  }
+   // Cargar el estado del modo oscuro del localStorage
+  const isDarkMode = localStorage.getItem('darkMode') === 'true';
+      if (isDarkMode) {
+          body.classList.add('dark');
+  }
+
+  // Actualizar visualmente el botón inicialmente
+  updateDarkModeButton();
+
+  // Evento para el botón de modo oscuro
+  darkModeToggle.addEventListener("click", () => {
+      body.classList.toggle("dark");
+      localStorage.setItem('darkMode', body.classList.contains('dark'));
+       // Actualizar el estado visual del botón
+      updateDarkModeButton();
+  });
+
+   // Evento para el botón de menú
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+      menuToggle.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+      });
 });
-
-
 
 
 
