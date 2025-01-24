@@ -5,12 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./output.css" rel="stylesheet">
     <link rel="icon" href="/images/ico.jpeg" type="image/png">
-
+ 
 
     <title>Cosplay Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    
     <style>
+        @font-face {
+            font-family: 'Anime Ace';  /* El nombre que usarás para referenciarla */
+            src: url('fonts/animeace2_reg.ttf') format('opentype');  /* Ruta al archivo .oft */
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+      
+        
+        /* Aplicar la fuente en el botón */
+        #dark-mode-toggle {
+            font-family: 'Anime Ace', sans-serif;
+        }
+        
+        
         @keyframes fadeIn {
             0% {
                 opacity: 0;
@@ -37,9 +52,113 @@
             transform: scale(1.05);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
+
+        /* Fondo general */
+        body.dark {
+            font-family: 'Anime Ace', sans-serif;
+            font-size: 14px;
+            background-color: #1a202c; /* Oscuro */
+            color: #f7fafc; /* Texto claro */
+        }
+
+        /* Header en modo oscuro */
+        body.dark .hero {
+            background: linear-gradient(to right, #4a5568, #2d3748); /* Gradiente oscuro */
+            color: #f7fafc;
+        }
+
+        /* Navbar en modo oscuro */
+        body.dark .navbar {
+            background-color: #2d3748;
+            color: #111111;
+        }
+
+        /*Letras en modo oscuro */
+        body.dark p{
+            color: #f7fafc;
+        }
+        
+
+        /* Enlaces */
+        body.dark a {
+            color: #9f7aea; /* Morado suave */
+        }
+
+        /* Galería */
+        body.dark .gallery img {
+            filter: brightness(95%);
+        }
+
+        /* Botones en modo oscuro */
+        body.dark .btn,
+        body.dark .social-button {
+            background-color: #6b46c1; /* Botón morado */
+            color: white;
+        }
+
+        /* Botones hover */
+        body.dark .btn:hover,
+        body.dark .social-button:hover {
+            background-color: #553c9a; /* Hover más oscuro */
+        }
+
+        /* Footer */
+        body.dark .footer {
+            background-color: #2d3748;
+            color: #f7fafc;
+        }
+                /* Modo oscuro para la sección de portafolio */
+        body.dark .portfolio {
+            background-color: #1a202c; /* Fondo oscuro */
+            color: #f7fafc; /* Texto claro */
+        }
+
+        /* Modo oscuro para la sección de Ko-fi */
+        body.dark .kofi-section {
+            background-color: #1a202c; /* Fondo oscuro */
+            color: #f7fafc; /* Texto claro */
+        }
+
+        /* Asegurar que los textos y marcos tengan un contraste adecuado */
+        
+        body.dark .kofi-section h2 {
+            color: #553c9a; /* Texto claro */
+        }
+
+        body.dark iframe#kofiframe {
+            background: #2d3748; /* Fondo oscuro para el iframe */
+        }
+        /* Modo oscuro para la sección de redes sociales */
+        body.dark .social {
+            background-color: #1a202c; /* Fondo oscuro */
+            color: #f7fafc; /* Texto claro */
+        }
+
+        /* Botones en modo oscuro */
+        body.dark .social .social-button {
+            background-color: #4a5568; /* Fondo oscuro para los botones */
+            color: #f7fafc; /* Texto claro */
+        }
+
+        /* Efectos hover en modo oscuro */
+        body.dark .social .social-button:hover {
+            background-color: #2d3748; /* Fondo más oscuro en hover */
+            color: #e2e8f0; /* Texto ligeramente más claro */
+        }
+        body {
+            font-family: 'Anime Ace', sans-serif;
+            font-size: 16px;
+            background-color: #f7fafc; /* Fondo blanco */
+            color: #111111; /* Texto oscuro */
+        }
+
+
+
+
+
     </style>
 </head>
-<body class="font-sans bg-gray-50">
+<body class="Anime ace bg-gray-50">
 
     <header class="hero bg-gradient-to-r from-purple-500 to-pink-500 text-white text-center py-20">
         <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
@@ -69,6 +188,10 @@
                 <li><a href="#portfolio" class="hover:text-purple-500 transition">Portafolio</a></li>
                 <li><a href="#social" class="hover:text-purple-500 transition">Redes</a></li>
             </ul>
+            <button id="dark-mode-toggle" class="text-purple-600 focus:outline-none px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:text-white">
+                🌙 Modo Oscuro
+            </button>
+            
             <!-- Botón de menú para móvil -->
             <button id="menu-toggle" class="block md:hidden text-purple-600 focus:outline-none">
                 <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">

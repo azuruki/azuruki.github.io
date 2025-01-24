@@ -116,10 +116,21 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+const darkModeToggle = document.getElementById("dark-mode-toggle");
+const body = document.body;
 
-  // Script para alternar el menú móvil
-  const menuToggle = document.getElementById('menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-  menuToggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-  });
+darkModeToggle.addEventListener("click", () => {
+    // Alternar entre modo oscuro y claro
+    if (body.classList.contains("dark")) {
+        body.classList.remove("dark");
+        darkModeToggle.textContent = "🌙 Modo Oscuro";
+        darkModeToggle.classList.remove("dark:bg-gray-700", "dark:text-white");
+        darkModeToggle.classList.add("bg-gray-200", "text-purple-600");
+    } else {
+        body.classList.add("dark");
+        darkModeToggle.textContent = "☀️ Modo Claro";
+        darkModeToggle.classList.remove("bg-gray-200", "text-purple-600");
+        darkModeToggle.classList.add("dark:bg-gray-700", "dark:text-white");
+    }
+});
+
