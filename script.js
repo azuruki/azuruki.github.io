@@ -125,12 +125,23 @@ darkModeToggle.addEventListener("click", () => {
         body.classList.remove("dark");
         darkModeToggle.textContent = "🌙 Modo Oscuro";
         darkModeToggle.classList.remove("dark:bg-gray-700", "dark:text-white");
-        darkModeToggle.classList.add("bg-gray-200", "text-purple-600");
+        darkModeToggle.classList.add("bg-gray-700", "text-white");
     } else {
         body.classList.add("dark");
         darkModeToggle.textContent = "☀️ Modo Claro";
-        darkModeToggle.classList.remove("bg-gray-200", "text-purple-600");
+        darkModeToggle.classList.remove("bg-gray-200", "text-purple");
         darkModeToggle.classList.add("dark:bg-gray-700", "dark:text-white");
     }
 });
 
+
+
+
+
+    // Toggle del menú móvil
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });

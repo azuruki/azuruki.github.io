@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/styles/output.css" rel="stylesheet">
+    <link href="/styles/font&modes.css" rel="stylesheet">
+
+    <link rel="icon" href="/images/ico.jpeg" type="image/png">
+ 
+
+    <title>Cosplay Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+
+</head>
+<body class="Anime ace bg-gray-50">
+
+    <header class="hero bg-gradient-to-r from-purple-500 to-pink-500 text-white text-center py-20">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <!-- Logo -->
+            <img src="/images/ico.jpeg" alt="Logo" class="w-40 h-40 md:w-64 md:h-64 rounded-full mb-6 md:mb-0 md:mr-8">
+            
+            <!-- Texto de bienvenida -->
+            <div class="text-center md:text-left flex-1">
+                <h1 class="text-4xl md:text-6xl font-bold drop-shadow-lg">Bienvenido al mundo de Azurukisan</h1>
+                <p class="text-lg md:text-2xl mt-4 font-light">Un recorrido por su pasión por el cosplay</p>
+                <a href="#portfolio" class="btn bg-white text-purple-600 px-6 py-3 rounded-full mt-8 inline-block shadow-lg hover:bg-purple-600 hover:text-white transition transform hover:scale-105">
+                    Ver Portafolio
+                </a>
+            </div>
+        </div>
+    </header>
+    
+
+
+
+    <nav class="navbar bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center px-4 py-3">
+            <!-- Título -->
+            <div class="text-xl font-bold text-purple-600">Azuruki</div>
+    
+            <!-- Links en pantallas grandes -->
+            <ul class="hidden md:flex space-x-6 text-gray-700 font-medium">
+                <li><a href="/" class="hover:text-purple-500 transition">Inicio</a></li>
+                
+
+            </ul>
+    
+            <!-- Botón de modo oscuro -->
+            <button id="dark-mode-toggle" class="text-purple-600 focus:outline-none px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:text-white sm:text-sm md:text-lg">
+                🌙 Modo Oscuro
+            </button>
+    
+            <!-- Botón de menú para móvil -->
+            <button id="menu-toggle" class="block md:hidden text-purple-600 focus:outline-none">
+                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    
+        <!-- Links ocultos en móvil -->
+        <ul id="mobile-menu" class="hidden md:hidden flex-col space-y-4 bg-gray-50 text-gray-700 font-medium px-4 py-2">
+            <li><a href="/" class="hover:text-purple-500 transition">Inicio</a></li>
+            
+        </ul>
+    </nav>
+
+
+    <section class="bg-gradient-to-r from-purple-700 to-black py-12 px-6 rounded-lg shadow-lg">
+        <div class="max-w-3xl mx-auto text-center">
+            <!-- Título -->
+            <h1 class="text-4xl font-extrabold text-white mb-6">
+                ¡Tu apoyo significa mucho para mí!
+            </h1>
+    
+            <!-- Descripción -->
+            <p class="text-lg text-white mb-8 leading-relaxed">
+                Como muchos sabeis, el cosplay es una pasión que requiere dedicación, tiempo y, por supuesto, recursos. Con cada nuevo proyecto, se necesitan materiales, props y herramientas para crear algo verdaderamente único. Si alguna vez te has sentido inspirado por mis cosplays o te ha gustado el trabajo que comparto, ¡me encantaría que consideraras apoyarme!
+            </p>
+            <p class="text-lg text-white mb-8 leading-relaxed">
+                He creado una wishlist de Amazon con algunas cositas que me ayudarían a seguir creciendo en este hermoso viaje creativo. No es solo para mí, sino para todos los proyectos y nuevas ideas que quiero llevar a cabo, y tu apoyo podría hacer que todo esto sea posible. 🙏✨
+            </p>
+            <p class="text-lg text-white mb-8 leading-relaxed">
+                <strong>¿Cómo puedes ayudarme?</strong> Si te gustaría contribuir, simplemente puedes revisar mi wishlist de Amazon. ¡Cualquier cosita, desde accesorios hasta materiales más grandes, será de gran ayuda! Como agradecimiento por tu apoyo, si decides donar algún artículo, me encantaría enviarte una print firmada de uno de mis cosplays, ¡como muestra de mi agradecimiento por tu generosidad! 🎁✨
+            </p>
+            <p class="text-lg text-white mb-8 leading-relaxed">
+                Gracias por estar aquí y por todo el cariño que me brindas. No importa si no puedes ayudar ahora, el simple hecho de que sigas mi trabajo y me apoyes con tu energía positiva es ya un regalo increíble. ¡Gracias por hacer que este viaje sea aún más especial! 💖
+            </p>
+    
+            <!-- Botón de enlace -->
+            <div>
+                <a href="https://www.amazon.es/hz/wishlist/ls/1F1CA42GPGLNK?ref_=wl_share" 
+                target="_blank" 
+                class="inline-block bg-orange-500 text-white text-lg font-semibold py-4 px-8 rounded-lg shadow-xl hover:bg-orange-600 hover:scale-105 transition-all duration-300">
+                    ¡Mira mi Wishlist de Amazon!
+                </a>
+            </div>
+        </div>
+    </section>
+    
+
+
+      
+     <!-- Footer -->
+    <footer class="footer bg-gray-900 text-white py-6 text-center mt-10">
+        <p class="text-sm">Hecho con ❤️ por <span class="font-bold">San1190</span></p>
+    </footer>
+
+
+    <script src="/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+@font-face {
+    font-family: 'Anime Ace';  /* El nombre que usarás para referenciarla */
+    src: url('/fonts/animeace2_bld.ttf') format('opentype');  /* Ruta al archivo .oft */
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+/* Efecto de escala al hacer clic */
+.clicked {
+    transform: scale(0.95);
+    transition: transform 0.2s ease;
+}
+
+/* Al pasar el mouse por encima del botón */
+.social-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Fondo general */
+body.dark {
+    font-family: 'Anime Ace', sans-serif;
+    
+    background-color: #1a202c; /* Oscuro */
+    color: #f7fafc; /* Texto claro */
+}
+
+/* Header en modo oscuro */
+body.dark .hero {
+    background: linear-gradient(to right, #4a5568, #2d3748); /* Gradiente oscuro */
+    color: #f7fafc;
+}
+
+/* Navbar en modo oscuro */
+body.dark .navbar {
+    background-color: #2d3748;
+    color: #111111;
+}
+
+/*Letras en modo oscuro */
+body.dark p{
+    color: #f7fafc;
+}
+
+
+/* Enlaces */
+body.dark a {
+    color: #9f7aea; /* Morado suave */
+}
+
+/* Galería */
+body.dark .gallery img {
+    filter: brightness(95%);
+}
+
+/* Botones en modo oscuro */
+body.dark .btn,
+body.dark .social-button {
+    background-color: #6b46c1; /* Botón morado */
+    color: white;
+}
+
+/* Botones hover */
+body.dark .btn:hover,
+body.dark .social-button:hover {
+    background-color: #553c9a; /* Hover más oscuro */
+}
+
+/* Footer */
+body.dark .footer {
+    background-color: #2d3748;
+    color: #f7fafc;
+}
+        /* Modo oscuro para la sección de portafolio */
+body.dark .portfolio {
+    background-color: #1a202c; /* Fondo oscuro */
+    color: #f7fafc; /* Texto claro */
+}
+
+/* Modo oscuro para la sección de Ko-fi */
+body.dark .kofi-section {
+    background-color: #1a202c; /* Fondo oscuro */
+    color: #f7fafc; /* Texto claro */
+}
+
+/* Asegurar que los textos y marcos tengan un contraste adecuado */
+
+body.dark .kofi-section h2 {
+    color: #553c9a; /* Texto claro */
+}
+
+body.dark iframe#kofiframe {
+    background: #2d3748; /* Fondo oscuro para el iframe */
+}
+/* Modo oscuro para la sección de redes sociales */
+body.dark .social {
+    background-color: #1a202c; /* Fondo oscuro */
+    color: #f7fafc; /* Texto claro */
+}
+
+/* Botones en modo oscuro */
+body.dark .social .social-button {
+    background-color: #4a5568; /* Fondo oscuro para los botones */
+    color: #f7fafc; /* Texto claro */
+}
+
+/* Efectos hover en modo oscuro */
+body.dark .social .social-button:hover {
+    background-color: #2d3748; /* Fondo más oscuro en hover */
+    color: #e2e8f0; /* Texto ligeramente más claro */
+}
+body {
+    font-family: 'Anime Ace', sans-serif;
+    font-size: 16px;
+    background-color: #f7fafc; /* Fondo blanco */
+    color: #111111; /* Texto oscuro */
+}
