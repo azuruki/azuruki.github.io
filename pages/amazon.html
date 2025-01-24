@@ -35,38 +35,35 @@
 
 
 
-    <nav class="navbar bg-white shadow-md sticky top-0 z-50">
+    <nav class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center px-4 py-3">
             <!-- Título -->
-            <div class="text-xl font-bold text-purple-600">Azuruki</div>
-    
+            <div class="text-xl font-bold text-purple-600 dark:text-purple-400">Azuruki🌸</div>
+        
             <!-- Links en pantallas grandes -->
-            <ul class="hidden md:flex space-x-6 text-gray-700 font-medium">
-                <li><a href="/" class="hover:text-purple-500 transition">Inicio</a></li>
-                
-
+            <ul class="hidden md:flex space-x-6 text-gray-700 dark:text-gray-300 font-medium">
+                <li><a href="/" class="hover:text-purple-500 transition-colors">Inicio</a></li>
             </ul>
-    
+        
             <!-- Botón de modo oscuro -->
-            <button id="dark-mode-toggle" class="text-purple-600 focus:outline-none px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:text-white sm:text-sm md:text-lg">
-                🌙 Modo Oscuro
+            <button id="dark-mode-toggle" class="flex-shrink-0 text-purple-600 focus:outline-none px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:text-white sm:text-sm md:text-base lg:px-5 lg:py-3 xl:px-6 xl:py-4 sm:px-3" aria-label="Cambiar a modo oscuro">
+                <span class="sm:hidden">🌙</span> 
+                <span class="md:inline hidden">🌙Modo Oscuro</span> 
             </button>
-    
+        
             <!-- Botón de menú para móvil -->
-            <button id="menu-toggle" class="block md:hidden text-purple-600 focus:outline-none">
+            <button id="menu-toggle" class="block md:hidden text-purple-600 focus:outline-none" aria-label="Abrir menú de navegación">
                 <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
         </div>
-    
+        
         <!-- Links ocultos en móvil -->
-        <ul id="mobile-menu" class="hidden md:hidden flex-col space-y-4 bg-gray-50 text-gray-700 font-medium px-4 py-2">
-            <li><a href="/" class="hover:text-purple-500 transition">Inicio</a></li>
-            
+        <ul id="mobile-menu" class="hidden md:hidden flex-col space-y-4 bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-medium px-4 py-2">
+            <li><a href="7" class="hover:text-purple-500 transition-colors">Inicio</a></li>
         </ul>
     </nav>
-
 
     <section class="bg-gradient-to-r from-purple-700 to-black py-12 px-6 rounded-lg shadow-lg">
         <div class="max-w-3xl mx-auto text-center">
