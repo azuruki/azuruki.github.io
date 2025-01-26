@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foro de Imágenes</title>
+  <link href="../styles/input.css" rel="stylesheet"> <!-- Enlace a Tailwind CSS -->
+</head>
+<body class="bg-gray-50">
+
+  <!-- Cabecera -->
+  <header class="bg-purple-600 text-white text-center py-5">
+    <h1 class="text-3xl font-bold">Foro de Imágenes</h1>
+    <p class="text-sm">Sube tus imágenes y compártelas con la comunidad</p>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="container mx-auto mt-10 p-5">
+    
+    <!-- Formulario de subida -->
+    <section class="bg-white shadow-lg rounded-lg p-5 mb-10">
+      <h2 class="text-2xl font-bold text-purple-600 mb-4">Subir Imagen</h2>
+      <form id="uploadForm" class="space-y-4" enctype="multipart/form-data">
+        <div>
+          <label for="title" class="block text-sm font-medium text-gray-700">Título:</label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            required
+            class="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500"
+          />
+        </div>
+        <div>
+          <label for="image" class="block text-sm font-medium text-gray-700">Seleccionar Imagen:</label>
+          <input
+            type="file"
+            id="image"
+            name="image"
+            accept="image/*"
+            required
+            class="mt-1 block w-full text-gray-500 border rounded-md"
+          />
+        </div>
+        <button
+          type="submit"
+          class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-500 transition"
+        >
+          Subir
+        </button>
+      </form>
+    </section>
+
+    <!-- Galería de imágenes -->
+    <section id="gallery" class="bg-white shadow-lg rounded-lg p-5">
+      <h2 class="text-2xl font-bold text-purple-600 mb-4">Galería</h2>
+      <div
+        id="imageGallery"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+      >
+        <!-- Aquí se cargarán las imágenes dinámicamente -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Scripts -->
+  <script>
+    // Función para subir imágenes
+    const uploadForm = document.getElementById("uploadForm");
+    uploadForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(uploadForm);
+
+      const response = await fetch("http://localhost:3000/upload", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (response.ok) {
+        alert("¡Imagen subida con éxito!");
+        uploadForm.reset();
+        loadGallery(); // Recargar la galería
+      } else {
+        alert("Hubo un error al subir la imagen.");
+      }
+    });
+
+    // Función para cargar las imágenes en la galería
+    async function loadGallery() {
+      const response = await fetch("http://localhost:3000/images");
+      const images = await response.json();
+      const gallery = document.getElementById("imageGallery");
+
+      gallery.innerHTML = images
+        .map(
+          (img) => `
+          <div class="shadow-lg rounded-lg p-2">
+            <img
+              src="/uploads/${img.name}"
+              alt="${img.name}"
+              class="rounded-lg w-full object-cover"
+            />
+            <p class="text-center text-sm text-gray-600 mt-2">${img.name}</p>
+          </div>
+        `
+        )
+        .join("");
+    }
+
+    // Cargar la galería al iniciar la página
+    loadGallery();
+  </script>
+</body>
+</html>
