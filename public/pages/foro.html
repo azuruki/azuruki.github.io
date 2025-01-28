@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foro de Imágenes</title>
+    <link href="/public/styles/output.css" rel="stylesheet">
+    <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+    <link href="/public/styles/font&modes.css" rel="stylesheet">
+    <link rel="icon" href="/public/styles/foro.css" type="image/png">    
+    <link rel="icon" href="/public/images/ico.jpeg" type="image/png">
+</head>
+
+<body class="bg-gray-50">
+    <header class="hero bg-gradient-to-r from-purple-500 to-pink-500 text-white text-center py-20">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold drop-shadow-lg">Foro de Imágenes</h1>
+            <p class="text-lg mt-4 font-light">Comparte imágenes con la comunidad</p>
+        </div>
+    </header>
+
+    <nav class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center px-4 py-3">
+            <!-- Título -->
+            <div class="text-xl font-bold text-purple-600 dark:text-purple-400">Azuruki🌸</div>
+
+            <!-- Links en pantallas grandes -->
+            <ul class="hidden md:flex space-x-6 text-gray-700 dark:text-gray-300 font-medium">
+                <li><a href="#about" class="hover:text-purple-500 transition-colors">Sobre mí</a></li>
+                <li><a href="#portfolio" class="hover:text-purple-500 transition-colors">Portafolio</a></li>
+                <li><a href="#social" class="hover:text-purple-500 transition-colors">Redes</a></li>
+                <li><a href="/public/pages/faq.html" class="hover:text-purple-500 transition-colors">FAQ</a></li>
+                <li><a href="/public/pages/amazon.html" class="hover:text-purple-500 transition-colors">Je</a></li>
+                <li><a href="/public/pages/foro.html" class="hover:text-purple-500 transition-colors">Foro</a></li>
+            </ul>
+
+            <!-- Botón de modo oscuro -->
+           <button id="dark-mode-toggle"
+                class="flex-shrink-0 text-purple-600 focus:outline-none px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:text-white sm:text-sm md:text-base lg:px-5 lg:py-3 xl:px-6 xl:py-4 sm:px-3"
+                aria-label="Cambiar a modo oscuro">
+                <span class="sm:hidden">🌙</span>
+                <span class="md:inline hidden">🌙Modo Oscuro</span>
+            </button>
+
+            <!-- Botón de menú para móvil -->
+            <button id="menu-toggle" class="block md:hidden text-purple-600 focus:outline-none"
+                aria-label="Abrir menú de navegación">
+                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Links ocultos en móvil -->
+        <ul id="mobile-menu" class=" flex-col space-y-4 bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-medium px-4 py-2"
+            style="display : none">
+            <li><a href="#about" class="hover:text-purple-500 transition-colors">Sobre mí</a></li>
+            <li><a href="#portfolio" class="hover:text-purple-500 transition-colors">Portafolio</a></li>
+            <li><a href="#social" class="hover:text-purple-500 transition-colors">Redes</a></li>
+            <li><a href="/public/pages/faq.html" class="hover:text-purple-500 transition-colors">FAQ</a></li>
+            <li><a href="/public/pages/amazon.html" class="hover:text-purple-500 transition-colors">Je</a></li>
+            <li><a href="/public/pages/foro.html" class="hover:text-purple-500 transition-colors">Foro</a></li>
+        </ul>
+    </nav>
+    <main class="container mx-auto mt-10 p-5">
+        <section id="loginSection" class="bg-white shadow-lg rounded-lg p-6 mb-12 max-w-md mx-auto">
+               <h2 class="text-2xl font-bold text-purple-600 mb-4">Login</h2>
+               <form id="loginForm" class="space-y-6">
+                   <div>
+                       <label for="username" class="block text-sm font-medium text-gray-700">Usuario:</label>
+                       <input type="text" id="username" name="username" required
+                           class="mt-2 block w-full px-4 py-2 border rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500" />
+                   </div>
+                   <div>
+                       <label for="password" class="block text-sm font-medium text-gray-700">Contraseña:</label>
+                       <input type="password" id="password" name="password" required
+                           class="mt-2 block w-full px-4 py-2 border rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500" />
+                   </div>
+                    <div id="login-message" class="text-red-500 mt-2"></div>
+                   <button type="submit"
+                       class="w-full bg-purple-600 text-black px-6 py-3 rounded-full hover:bg-purple-500 transition transform hover:scale-105">
+                       Login
+                   </button>
+               </form>
+        </section>
+        <div id="notLoggedInMessage" class="text-center hidden">
+            <p class="text-gray-700">Inicia sesión para comentar.</p>
+        </div>
+   
+           <section id="chat-section" class="hidden bg-white shadow-lg rounded-lg p-6 mt-10">
+               <h2 class="text-2xl font-bold text-purple-600 mb-4">Comentarios</h2>
+               <div id="chat-container" class="mb-4 p-2 border rounded-md h-[60vh] overflow-y-auto">
+                   <!-- Aquí irán los comentarios -->
+               </div>
+               <div class="flex space-x-2">
+                   <input type="text" id="comment-text"
+                       class="flex-1 p-2 border rounded-md focus:ring-purple-500 focus:border-purple-500"
+                       placeholder="Escribe un comentario">
+                   <input type="file" id="comment-image" class="hidden" accept="image/*" />
+                   <label for="comment-image" class="p-2 rounded-md bg-gray-200 hover:bg-gray-300 cursor-pointer">
+                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                           stroke="currentColor" class="w-6 h-6">
+                           <path stroke-linecap="round" stroke-linejoin="round"
+                               d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.158 5.159m-1.5 1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.9-2.9m-7.5 7.5l4.5-4.5" />
+                       </svg>
+                   </label>
+                   <button id="send-comment-btn"
+                       class="bg-purple-600 text-white p-2 rounded-md hover:bg-purple-700 transition transform hover:scale-105">Enviar</button>
+               </div>
+           </section>
+       </main>
+    <script src="/public/js/foro.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+.fc-theme-standard .fc-daygrid-event {
+    background-color: #a855f7;
+    border: none;
+    padding: 2px;
+    margin: 1px;
+    font-size: 0.9rem;
+    white-space: normal;
+    overflow: hidden;
+}
+
+
+.fc-theme-standard .fc-daygrid-event-harness .fc-event-time,
+.fc-theme-standard .fc-daygrid-event-harness .fc-event-title {
+    color: white;
+}
+
+.rounded-md > img {
+max-width: 400px;
+max-height: 400px;
+}
