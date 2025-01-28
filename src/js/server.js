@@ -1,10 +1,9 @@
-require('dotenv').config(); // Cargar las variables de entorno desde .env
+require('dotenv').config();
 const express = require("express");
 const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
 const cors = require("cors");
-const { spawn } = require('child_process');
 
 const app = express();
 
@@ -16,7 +15,7 @@ const AUTH_PASSWORD = process.env.AUTH_PASSWORD || "password";
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, "uploads/");
+        cb(null, "public/uploads/");
     },
     filename: (req, file, cb) => {
         const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
@@ -77,66 +76,49 @@ app.get("/uploads", (req, res) => {
 app.get("/pages/foro.html", (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'pages', 'foro.html'))
 });
-// Endpoint para recibir y guardar los comentarios
+
 app.post("/comment", upload.single('image'), (req, res) => {
     const text = req.body.text;
     const image = req.file ? req.file.filename : null;
+     const commentsFile = "comments.json"
+    fs.readFile(commentsFile, 'utf8', (err, data) => {
+    let comments = [];
+     if(!err && data)
+        {
+            try {
+                 comments = JSON.parse(data);
+            } catch (error) {
+               comments = [];
+            }
+        }
+         const newComment = {text, image: image ? `/uploads/${image}` : null}
+        comments.push(newComment);
 
-    const pythonProcess = spawn('python', ['database.py', 'insert_comment', text, image]);
-         let output = '';
-        pythonProcess.stdout.on('data', (data) => {
-              output += data.toString();
-        });
-
-       pythonProcess.stderr.on('data', (data) => {
-             console.error(`stderr: ${data}`);
-         });
-
-         pythonProcess.on('close', (code) => {
-           if (code === 0) {
-              console.log(`Python script executed successfully`);
-                  res.send({text, image});
-           } else {
-                 console.error(`Python script failed with code ${code}`);
-            res.status(500).send({ message: 'Error al añadir comentario' });
-         }
-        });
+            fs.writeFile(commentsFile, JSON.stringify(comments, null, 2), (err) => {
+              if (err) {
+                 console.error('Error writing to file: ', err);
+                return res.status(500).send({ message: 'Error al añadir comentario' });
+                }
+                res.send(newComment)
+          });
+    });
 });
 
 app.get("/comment", (req, res) => {
-      const pythonProcess = spawn('python', ['database.py', 'get_all_comments']);
-       let output = '';
-       let errorOutput = '';
-        pythonProcess.stdout.on('data', (data) => {
-              output += data.toString();
-        });
-
-      pythonProcess.stderr.on('data', (data) => {
-               errorOutput += data.toString();
-             });
-         pythonProcess.on('close', (code) => {
-            if(code === 0)
-            {
-               try{
-                const comments = output.split("), (").map((row) => {
-                  const [text, image] = row.replace('[(','').replace(')]','').split("', '").map(v=> v.replace("'", '').trim());
-                   return {text, image};
-                 })
-               res.send(comments);
-                }catch(e)
-               {
-                 console.error(errorOutput);
-                   return res.status(500).send({message:'Error al leer comentarios'})
-                }
-            } else
-            {
-              console.error(errorOutput);
-              return res.status(500).send({message: 'Error al obtener comentarios'});
-           }
-
-        });
+  const commentsFile = "comments.json"
+    fs.readFile(commentsFile, 'utf8', (err, data) => {
+        if (err) {
+            console.error("Error al leer el archivo comments.json:", err);
+            return res.status(500).send("Error al leer el archivo de comentarios");
+        }
+       try{
+            const comments = JSON.parse(data);
+             res.send(comments);
+        } catch(e){
+          res.status(500).send({message:"Error al parsear los comentarios"})
+        }
+    });
 });
-
 const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Servidor corriendo en http://localhost:${PORT}`);

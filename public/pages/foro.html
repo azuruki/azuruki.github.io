@@ -7,9 +7,9 @@
     <title>Foro de Imágenes</title>
     <link href="/public/styles/output.css" rel="stylesheet">
     <link href="https://cdn.tailwindcss.com" rel="stylesheet">
-    <link href="/public/styles/font&modes.css" rel="stylesheet">
-    <link rel="icon" href="/public/styles/foro.css" type="image/png">    
+    <link href="/public/styles/font&modes.css" rel="stylesheet">  
     <link rel="icon" href="/public/images/ico.jpeg" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="bg-gray-50">
@@ -24,45 +24,29 @@
         <div class="container mx-auto flex justify-between items-center px-4 py-3">
             <!-- Título -->
             <div class="text-xl font-bold text-purple-600 dark:text-purple-400">Azuruki🌸</div>
-
+        
             <!-- Links en pantallas grandes -->
             <ul class="hidden md:flex space-x-6 text-gray-700 dark:text-gray-300 font-medium">
-                <li><a href="#about" class="hover:text-purple-500 transition-colors">Sobre mí</a></li>
-                <li><a href="#portfolio" class="hover:text-purple-500 transition-colors">Portafolio</a></li>
-                <li><a href="#social" class="hover:text-purple-500 transition-colors">Redes</a></li>
-                <li><a href="/public/pages/faq.html" class="hover:text-purple-500 transition-colors">FAQ</a></li>
-                <li><a href="/public/pages/amazon.html" class="hover:text-purple-500 transition-colors">Je</a></li>
-                <li><a href="/public/pages/foro.html" class="hover:text-purple-500 transition-colors">Foro</a></li>
+                <li><a href="/" class="hover:text-purple-500 transition-colors">Inicio</a></li>
             </ul>
-
+        
             <!-- Botón de modo oscuro -->
-           <button id="dark-mode-toggle"
-                class="flex-shrink-0 text-purple-600 focus:outline-none px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:text-white sm:text-sm md:text-base lg:px-5 lg:py-3 xl:px-6 xl:py-4 sm:px-3"
-                aria-label="Cambiar a modo oscuro">
-                <span class="sm:hidden">🌙</span>
-                <span class="md:inline hidden">🌙Modo Oscuro</span>
+            <button id="dark-mode-toggle" class="flex-shrink-0 text-purple-600 focus:outline-none px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:text-white sm:text-sm md:text-base lg:px-5 lg:py-3 xl:px-6 xl:py-4 sm:px-3" aria-label="Cambiar a modo oscuro">
+                <span class="sm:hidden">🌙</span> 
+                <span class="md:inline hidden">🌙Modo Oscuro</span> 
             </button>
-
+        
             <!-- Botón de menú para móvil -->
-            <button id="menu-toggle" class="block md:hidden text-purple-600 focus:outline-none"
-                aria-label="Abrir menú de navegación">
-                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M4 6h16M4 12h16M4 18h16" />
+            <button id="menu-toggle" class="block md:hidden text-purple-600 focus:outline-none" aria-label="Abrir menú de navegación">
+                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
         </div>
-
+        
         <!-- Links ocultos en móvil -->
-        <ul id="mobile-menu" class=" flex-col space-y-4 bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-medium px-4 py-2"
-            style="display : none">
-            <li><a href="#about" class="hover:text-purple-500 transition-colors">Sobre mí</a></li>
-            <li><a href="#portfolio" class="hover:text-purple-500 transition-colors">Portafolio</a></li>
-            <li><a href="#social" class="hover:text-purple-500 transition-colors">Redes</a></li>
-            <li><a href="/public/pages/faq.html" class="hover:text-purple-500 transition-colors">FAQ</a></li>
-            <li><a href="/public/pages/amazon.html" class="hover:text-purple-500 transition-colors">Je</a></li>
-            <li><a href="/public/pages/foro.html" class="hover:text-purple-500 transition-colors">Foro</a></li>
+        <ul id="mobile-menu" class="hidden md:hidden flex-col space-y-4 bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-medium px-4 py-2">
+            <li><a href="/" class="hover:text-purple-500 transition-colors">Inicio</a></li>
         </ul>
     </nav>
     <main class="container mx-auto mt-10 p-5">
@@ -86,16 +70,15 @@
                    </button>
                </form>
         </section>
-        <div id="notLoggedInMessage" class="text-center hidden">
+         <div id="notLoggedInMessage" class="text-center">
             <p class="text-gray-700">Inicia sesión para comentar.</p>
-        </div>
-   
-           <section id="chat-section" class="hidden bg-white shadow-lg rounded-lg p-6 mt-10">
+         </div>
+           <section id="chat-section" class="bg-white shadow-lg rounded-lg p-6 mt-10">
                <h2 class="text-2xl font-bold text-purple-600 mb-4">Comentarios</h2>
                <div id="chat-container" class="mb-4 p-2 border rounded-md h-[60vh] overflow-y-auto">
                    <!-- Aquí irán los comentarios -->
                </div>
-               <div class="flex space-x-2">
+               <div class="flex space-x-2" id="commentForm">
                    <input type="text" id="comment-text"
                        class="flex-1 p-2 border rounded-md focus:ring-purple-500 focus:border-purple-500"
                        placeholder="Escribe un comentario">
