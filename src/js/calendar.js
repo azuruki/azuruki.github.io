@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
           start: '2024-04-01',
         },
         {
-          title: 'Salón del Cómic',
+          title: 'Salón Comic Vlc',
           start: '2025-02-28',
         },
       ]
