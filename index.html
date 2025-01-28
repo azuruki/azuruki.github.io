@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/src/styles/output.css" rel="stylesheet">
     <link href="/src/styles/font&modes.css" rel="stylesheet">
-
+    <link href="/src/styles/calendar.css" rel="stylesheet">
     <link rel="icon" href="/images/ico.jpeg" type="image/png">
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.css' rel='stylesheet' />
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.js'></script>
  
 
     <title>Cosplay Portfolio</title>
@@ -80,6 +82,16 @@
             <h2 class="text-4xl font-semibold text-purple-600">Sobre mí</h2>
             <p class="mt-6 text-lg text-gray-700 leading-relaxed">Hola, soy <span class="font-bold">Azurukisan</span>, una apasionada del cosplay desde 2021. Me encanta dar vida a mis personajes favoritos con creatividad y dedicación. Cada cosplay cuenta una historia, y mi objetivo es compartirla contigo. ¡Gracias por visitar mi página!</p>
         </div>
+    </section>
+
+
+    <section class="container mx-auto px-4 mt-8">
+        <div class="container mx-auto px-4 mt-8">
+      <div class="max-w-xl mx-auto mb-8 sm:max-w-lg md:max-w-2xl lg:max-w-3xl xl:max-w-4xl">
+        <h2 class="text-2xl font-semibold text-purple-600 text-center  mb-4">Próximos eventos</h2>
+           <div id='calendar'></div>
+      </div>
+    </div>
     </section>
 
     <!-- Portfolio Section -->
@@ -204,12 +216,15 @@
                 </a>
 
             </div>
+
         </div>
+        
+    </section>
 
         
 
 
-    
+        
     
 <!-- Footer -->
 <footer class="footer bg-gray-900 text-white py-6 text-center mt-10">
@@ -218,6 +233,7 @@
 
 
     <script src="/src/js/script.js"></script>
+    <script src="/src/js/calendar.js"></script>
 
 </body>
 </html>
