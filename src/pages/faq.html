@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/src/styles/output.css" rel="stylesheet">
+    <link href="/src/styles/font&modes.css" rel="stylesheet">
+    <link rel="icon" href="/images/ico.jpeg" type="image/png">
+    <title>Preguntas Frecuentes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+
+    <header class="hero bg-gradient-to-r from-purple-500 to-pink-500 text-white text-center py-20">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <!-- Logo -->
+            <img src="/images/ico.jpeg" alt="Logo" class="w-40 h-40 md:w-64 md:h-64 rounded-full mb-6 md:mb-0 md:mr-8">
+            
+            <!-- Texto de bienvenida -->
+            <div class="text-center md:text-left flex-1">
+                <h1 class="text-4xl md:text-6xl font-bold drop-shadow-lg">Preguntas Frecuentes</h1>
+                <p class="text-lg md:text-2xl mt-4 font-light">Resuelve tus dudas sobre Azurukisan</p>
+            </div>
+        </div>
+    </header>
+
+     <nav class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center px-4 py-3">
+            <!-- Título -->
+            <div class="text-xl font-bold text-purple-600 dark:text-purple-400">Azuruki🌸</div>
+        
+            <!-- Links en pantallas grandes -->
+            <ul class="hidden md:flex space-x-6 text-gray-700 dark:text-gray-300 font-medium">
+                <li><a href="/" class="hover:text-purple-500 transition-colors">Inicio</a></li>
+
+            </ul>
+        
+            <!-- Botón de modo oscuro -->
+             <button id="dark-mode-toggle" class="flex-shrink-0 text-purple-600 focus:outline-none px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:text-white sm:text-sm md:text-base lg:px-5 lg:py-3 xl:px-6 xl:py-4 sm:px-3" aria-label="Cambiar a modo oscuro">
+                <span class="sm:hidden">🌙</span> 
+                <span class="md:inline hidden">🌙Modo Oscuro</span> 
+            </button>
+        
+            <!-- Botón de menú para móvil -->
+            <button id="menu-toggle" class="block md:hidden text-purple-600 focus:outline-none" aria-label="Abrir menú de navegación">
+                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Links ocultos en móvil -->
+         <ul id="mobile-menu" class=" flex-col space-y-4 bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-medium px-4 py-2" style="display : none">
+             <li><a href="/" class="hover:text-purple-500 transition-colors">Inicio</a></li>
+        </ul>
+    </nav>
+
+    <main class="container mx-auto mt-10 p-5">
+    <section id="faq" class="bg-white shadow-lg rounded-lg px-4 py-8 p-6 mb-12 max-w-3xl mx-auto">
+        <h2 class="text-2xl font-bold text-purple-600 mb-4 text-center">Preguntas Frecuentes</h2>
+        <div id="chat-container" class="space-y-6">
+             <!-- Pregunta 1 -->
+            <div class="flex items-start space-x-4">
+                 <img src="/images/chomusuke.png" alt="User" class="w-10 h-10 rounded-full">
+                 <div class="bg-gray-100 rounded-xl p-3">
+                      <p class="text-gray-700 font-medium">¿Cuál es tu personaje favorito para hacer cosplay?</p>
+                  </div>
+            </div>
+            <!-- Respuesta 1 -->
+            <div class="flex items-start space-x-4 flex-row-reverse text-right">
+                 <img src="/images/ico.jpeg" alt="Azurukisan" class="w-10 h-10 rounded-full">
+                 <div class="bg-purple-100 rounded-xl p-3">
+                      <p class="text-gray-700 font-medium">¡Esa es una pregunta difícil! ¡Pero creo que si tengo que elegir uno sería Makima, me encanta el personaje!</p>
+                   </div>
+            </div>
+             <!-- Pregunta 2 -->
+            <div class="flex items-start space-x-4">
+                 <img src="/images/chomusuke.png" alt="User" class="w-10 h-10 rounded-full">
+                 <div class="bg-gray-100 rounded-xl p-3">
+                      <p class="text-gray-700 font-medium">¿Desde cuándo te gusta el mundo del cosplay?</p>
+                  </div>
+            </div>
+            <!-- Respuesta 2 -->
+            <div class="flex items-start space-x-4 flex-row-reverse text-right">
+                 <img src="/images/ico.jpeg" alt="Azurukisan" class="w-10 h-10 rounded-full">
+                 <div class="bg-purple-100 rounded-xl p-3">
+                      <p class="text-gray-700 font-medium">¡Desde el 2021! Fue cuando hice mi primer cosplay y no he parado desde entonces!</p>
+                   </div>
+            </div>
+            <!-- Pregunta 3 -->
+             <div class="flex items-start space-x-4">
+                 <img src="/images/chomusuke.png" alt="User" class="w-10 h-10 rounded-full">
+                 <div class="bg-gray-100 rounded-xl p-3">
+                      <p class="text-gray-700 font-medium">¿Qué consejo le darías a alguien que quiera empezar en el cosplay?</p>
+                  </div>
+            </div>
+            <!-- Respuesta 3 -->
+            <div class="flex items-start space-x-4 flex-row-reverse text-right">
+                 <img src="/images/ico.jpeg" alt="Azurukisan" class="w-10 h-10 rounded-full">
+                 <div class="bg-purple-100 rounded-xl p-3">
+                      <p class="text-gray-700 font-medium">¡Que se diviertan! Que empiecen por el personaje que más le guste y poco a poco irán mejorando! ¡Mucha suerte!</p>
+                   </div>
+            </div>
+            <!-- Pregunta 4 -->
+            <div class="flex items-start space-x-4">
+                <img src="/images/chomusuke.png" alt="User" class="w-10 h-10 rounded-full">
+                <div class="bg-gray-100 rounded-xl p-3">
+                     <p class="text-gray-700 font-medium">¿Donde puedo ver más de tu trabajo?</p>
+                 </div>
+           </div>
+           <!-- Respuesta 4 -->
+           <div class="flex items-start space-x-4 flex-row-reverse text-right">
+                <img src="/images/ico.jpeg" alt="Azurukisan" class="w-10 h-10 rounded-full">
+                <div class="bg-purple-100 rounded-xl p-3">
+                     <p class="text-gray-700 font-medium">¡En mis redes sociales! Puedes encontrar los enlaces en el inicio de la web.</p>
+                  </div>
+           </div>
+        </div>
+    </section>
+</main>
+
+    <footer class="footer bg-gray-900 text-white py-6 text-center mt-10">
+        <p class="text-sm">Hecho con ❤️ por <span class="font-bold">San1190</span></p>
+    </footer>
+
+        <script>
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+            darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+            });
+
+           menuToggle.addEventListener('click', () => {
+           mobileMenu.style.display = mobileMenu.style.display === 'none' ? 'flex' : 'none';
+        });
+    </script>
+</body>
+</html>

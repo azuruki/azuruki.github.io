@@ -1,11 +1,9 @@
 @font-face {
-    font-family: 'Anime Ace';  /* El nombre que usarás para referenciarla */
-    src: url('/fonts/animeace2_bld.ttf') format('opentype');  /* Ruta al archivo .oft */
+    font-family: 'Anime Ace';
+    src: url('/fonts/animeace2_bld.ttf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
-
-
 
 @keyframes fadeIn {
     0% {
@@ -37,7 +35,6 @@
 /* Fondo general */
 body.dark {
     font-family: 'Anime Ace', sans-serif;
-    
     background-color: #1a202c; /* Oscuro */
     color: #f7fafc; /* Texto claro */
 }
@@ -51,20 +48,28 @@ body.dark .hero {
 /* Navbar en modo oscuro */
 body.dark .navbar {
     background-color: #2d3748;
-    color: #111111;
+    color: #f7fafc;
 }
 
 /*Letras en modo oscuro */
 body.dark p{
-    color: #f7fafc;
+    color: #e2e8f0;
 }
+    body.dark .bg-gray-100 p {
+        color: #111111; /* Textos en negro en modo oscuro */
+    }
 
-
+    body.dark .bg-purple-100 p{
+    color: #111111;
+  }
 /* Enlaces */
 body.dark a {
-    color: #9f7aea; /* Morado suave */
+    color: #9f7aea;
 }
-
+/*Titulos */
+body.dark h2 {
+    color: #9f7aea;
+}
 /* Galería */
 body.dark .gallery img {
     filter: brightness(95%);
@@ -88,7 +93,8 @@ body.dark .footer {
     background-color: #2d3748;
     color: #f7fafc;
 }
-        /* Modo oscuro para la sección de portafolio */
+
+/* Modo oscuro para la sección de portafolio */
 body.dark .portfolio {
     background-color: #1a202c; /* Fondo oscuro */
     color: #f7fafc; /* Texto claro */
@@ -101,14 +107,14 @@ body.dark .kofi-section {
 }
 
 /* Asegurar que los textos y marcos tengan un contraste adecuado */
-
 body.dark .kofi-section h2 {
-    color: #553c9a; /* Texto claro */
+    color: #9f7aea; /* Texto claro */
 }
 
 body.dark iframe#kofiframe {
     background: #2d3748; /* Fondo oscuro para el iframe */
 }
+
 /* Modo oscuro para la sección de redes sociales */
 body.dark .social {
     background-color: #1a202c; /* Fondo oscuro */
@@ -131,4 +137,24 @@ body {
     font-size: 16px;
     background-color: #f7fafc; /* Fondo blanco */
     color: #111111; /* Texto oscuro */
+}
+    /* textos modo claro */
+body p{
+        color : #111111;
+    }
+body a {
+   color : #9f7aea;
+}
+body h2 {
+    color : #9f7aea
+}
+/* Modo oscuro para la sección de preguntas frecuentes */
+body.dark #faq {
+    background-color: #2d3748; /* Fondo oscuro */
+     color: #f7fafc; /* Texto claro */
+}
+
+/* Modo oscuro para la sección de main */
+body.dark main {
+    background-color: #1a202c;
 }
