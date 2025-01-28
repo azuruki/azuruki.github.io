@@ -1,109 +1,112 @@
+import { initializeApp } from "firebase/app";
+import { getFirestore, collection, addDoc, getDocs, serverTimestamp, query, orderBy } from "firebase/firestore";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+
+
 const gallery = document.getElementById("imageGallery");
 const loginSection = document.getElementById("loginSection");
-  const loginForm = document.getElementById("loginForm");
-  const darkModeToggle = document.getElementById('dark-mode-toggle');
-  const menuToggle = document.getElementById('menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const notLoggedInMessage = document.getElementById('notLoggedInMessage');
-  const loginMessage = document.getElementById('login-message');
-  const chatSection = document.getElementById('chat-section');
-  const chatContainer = document.getElementById('chat-container');
-  const commentInput = document.getElementById('comment-text');
-  const commentImageInput = document.getElementById('comment-image');
-  const sendCommentButton = document.getElementById('send-comment-btn');
-  const commentForm = document.getElementById('commentForm')
+const loginForm = document.getElementById("loginForm");
+const darkModeToggle = document.getElementById('dark-mode-toggle');
+const menuToggle = document.getElementById('menu-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+const notLoggedInMessage = document.getElementById('notLoggedInMessage');
+const loginMessage = document.getElementById('login-message');
+const chatSection = document.getElementById('chat-section');
+const chatContainer = document.getElementById('chat-container');
+const commentInput = document.getElementById('comment-text');
+const commentImageInput = document.getElementById('comment-image');
+const sendCommentButton = document.getElementById('send-comment-btn');
+const commentForm = document.getElementById('commentForm')
+const clearCommentsButton = document.getElementById('clear-comments');
 
-  darkModeToggle.addEventListener('click', () => {
-      document.body.classList.toggle('dark');
-  });
+darkModeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+});
 
-  menuToggle.addEventListener('click', () => {
-      mobileMenu.style.display = mobileMenu.style.display === 'none' ? 'flex' : 'none';
-  });
+menuToggle.addEventListener('click', () => {
+    mobileMenu.style.display = mobileMenu.style.display === 'none' ? 'flex' : 'none';
+});
 
-  const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-  setLoggedIn(isLoggedIn)
 
-  function setLoggedIn(loggedIn) {
-      if (loggedIn) {
-          loginSection.style.display = "none";
-          notLoggedInMessage.style.display = "none";
-          commentForm.style.display = 'flex'
-      } else {
-          loginSection.style.display = "block";
-          notLoggedInMessage.style.display = "block";
-          commentForm.style.display = 'none'
-      }
+const firebaseConfig = {
+    apiKey: "AIzaSyCCOkfRSHwRQiLWbY5_fDykbpcQdLj4BvY",
+    authDomain: "azurukipage.firebaseapp.com",
+    projectId: "azurukipage",
+    storageBucket: "azurukipage.firebasestorage.app",
+    messagingSenderId: "154795115110",
+    appId: "1:154795115110:web:588b915040d065ae1223a7",
+    measurementId: "G-LK18PYWEYW"
+  };
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const storage = getStorage(app);
+
+const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+setLoggedIn(isLoggedIn)
+
+function setLoggedIn(loggedIn) {
+    if (loggedIn) {
+        loginSection.style.display = "none";
+        notLoggedInMessage.style.display = "none";
+        commentForm.style.display = 'flex'
+    } else {
+        loginSection.style.display = "block";
+        notLoggedInMessage.style.display = "block";
+        commentForm.style.display = 'none'
+    }
+}
+
+const AUTH_USERNAME = "admin";
+const AUTH_PASSWORD = "password";
+
+loginForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const formData = new FormData(loginForm);
+    const username = formData.get('username');
+    const password = formData.get('password');
+    if (username === AUTH_USERNAME && password === AUTH_PASSWORD) {
+        loginMessage.textContent = "¡Autenticación exitosa!";
+        localStorage.setItem('isLoggedIn', 'true');
+        setLoggedIn(true)
+    } else {
+        loginMessage.textContent = "Credenciales incorrectas";
+        setLoggedIn(false);
+    }
+});
+
+sendCommentButton.addEventListener("click", async () => {
+  const commentText = commentInput.value.trim();
+  const commentImageFile = commentImageInput.files[0];
+  let imageUrl = null;
+
+  if (commentText === "" && !commentImageFile) {
+        alert("Por favor, escribe un comentario o selecciona una imagen.");
+    return;
   }
 
-  loginForm.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const formData = new FormData(loginForm);
-      const username = formData.get('username')
-      const password = formData.get('password')
-      const loginData = {
-          username,
-          password,
-      };
-      const response = await fetch("http://localhost:3000/login", {
-          method: "POST",
-          headers: {
-              'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(loginData),
-      });
-      if (response.ok) {
-          const responseData = await response.json();
-          if (responseData.success) {
-              loginMessage.textContent = "¡Autenticación exitosa!";
-              localStorage.setItem('isLoggedIn', 'true');
-              setLoggedIn(true)
-          } else {
-              loginMessage.textContent = "Credenciales incorrectas";
-              setLoggedIn(false)
-          }
-      } else {
-          loginMessage.textContent = "Hubo un error al intentar loguearse.";
-          setLoggedIn(false)
-      }
-  });
+   if (commentImageFile) {
+      const storageRef = ref(storage, `images/${commentImageFile.name}`);
+     await uploadBytes(storageRef, commentImageFile);
+      imageUrl = await getDownloadURL(storageRef);
+   }
+     const newComment = {text: commentText, image: imageUrl, timestamp: serverTimestamp()};
+     try {
+        await addDoc(collection(db, "comments"), newComment);
+        addCommentToChat(newComment)
+        commentInput.value = '';
+        commentImageInput.value = '';
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
 
-  sendCommentButton.addEventListener("click", async () => {
-      const commentText = commentInput.value.trim();
-      const commentImageFile = commentImageInput.files[0];
+});
 
-      if (commentText === "" && !commentImageFile) {
-          alert("Por favor, escribe un comentario o selecciona una imagen.");
-          return;
-      }
-
-      const formData = new FormData();
-      formData.append('text', commentText)
-      if (commentImageFile) {
-          formData.append('image', commentImageFile);
-      }
-      const response = await fetch('http://localhost:3000/comment', {
-          method: 'POST',
-          body: formData,
-      });
-
-      if (response.ok) {
-          const responseData = await response.json();
-          addCommentToChat(responseData);
-          commentInput.value = '';
-          commentImageInput.value = '';
-
-      } else {
-          alert('Error al enviar el comentario');
-      }
-  });
-
-  function addCommentToChat(commentData) {
+function addCommentToChat(commentData) {
     const newComment = document.createElement('div');
     newComment.classList.add("mb-2", "p-2", "border", "rounded-md");
     let commentHTML = `<p><strong>Admin:</strong> ${commentData.text}</p>`;
     if (commentData.image) {
-        console.log("Ruta de imagen recibida:", commentData.image); // Añade esta línea
         commentHTML += `<img src="${commentData.image}" alt="Imagen del comentario" class="mt-2 rounded-md" style="max-width: 200px;">`;
     }
     newComment.innerHTML = commentHTML;
@@ -111,21 +114,18 @@ const loginSection = document.getElementById("loginSection");
     chatContainer.scrollTop = chatContainer.scrollHeight;
 }
 
-  function loadCommentsOnStart() {
-    fetch('http://localhost:3000/comment')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Error al obtener la lista de comentarios: ${response.statusText}`);
-            }
-            return response.json();
-        })
-        .then(comments => {
-             comments.forEach(comment => addCommentToChat(comment))
-        })
-          .catch(error => {
-             console.error('Hubo un error al cargar los comentarios:', error);
-              chatContainer.innerHTML = '<p>No se pudieron cargar los comentarios.</p>';
-          });
-  }
+async function loadCommentsOnStart() {
+  const q = query(collection(db, "comments"), orderBy("timestamp", "asc"));
+  const querySnapshot = await getDocs(q);
+  querySnapshot.forEach((doc) => {
+    addCommentToChat(doc.data())
+  });
+}
+loadCommentsOnStart();
 
-  loadCommentsOnStart();
+
+function clearComments(){
+    chatContainer.innerHTML = "";
+}
+
+clearCommentsButton.addEventListener('click', () => clearComments())
