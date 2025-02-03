@@ -19,7 +19,7 @@
             <!-- Texto de bienvenida -->
             <div class="text-center md:text-left flex-1">
                 <h1 class="text-4xl md:text-6xl font-bold drop-shadow-lg">Preguntas Frecuentes</h1>
-                <p class="text-lg md:text-2xl mt-4 font-light">Resuelve tus dudas sobre Azurukisan</p>
+                <p class="text-lg text-purple-600 md:text-2xl mt-4 font-light">Resuelve tus dudas sobre Azurukisan</p>
             </div>
         </div>
     </header>
@@ -114,7 +114,7 @@
            <div class="flex items-start space-x-4 flex-row-reverse text-right">
                 <img src="/public/images/ico.jpeg" alt="Azurukisan" class="w-10 h-10 rounded-full">
                 <div class="bg-purple-100 rounded-xl p-3">
-                     <p class="text-gray-700 font-medium">¡En mis redes sociales! Puedes encontrar los enlaces en el inicio de la web.</p>
+                     <p class="text-gray-700 font-medium">¡En mis <b><a href="/#social" class="hover:text-purple-500 transition-colors">redes</a></b> sociales! Puedes encontrar los enlaces en el inicio de la web.</p>
                   </div>
            </div>
         </div>
@@ -125,19 +125,7 @@
         <p class="text-sm">Hecho con ❤️ por <span class="font-bold">San1190</span></p>
     </footer>
 
-        <script>
-        const darkModeToggle = document.getElementById('dark-mode-toggle');
-        const menuToggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
 
-            darkModeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark');
-            });
-
-           menuToggle.addEventListener('click', () => {
-           mobileMenu.style.display = mobileMenu.style.display === 'none' ? 'flex' : 'none';
-        });
-    </script>
     <script src="/public/js/script.js"></script>
 </body>
 </html>

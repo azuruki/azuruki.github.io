@@ -50,18 +50,21 @@ body.dark .navbar {
     background-color: #2d3748;
     color: #f7fafc;
 }
-
+/* Modifica el elemento que contiene al "Azukuki" en el nav */
+body.dark .text-purple-600{
+    color: #9f7aea;
+}
 /*Letras en modo oscuro */
 body.dark p{
     color: #e2e8f0;
 }
-    body.dark .bg-gray-100 p {
-        color: #111111; /* Textos en negro en modo oscuro */
-    }
+body.dark .bg-gray-100 p {
+    color: #111111; /* Textos en negro en modo oscuro */
+}
 
-    body.dark .bg-purple-100 p{
+body.dark .bg-purple-100 p{
     color: #111111;
-  }
+}
 /* Enlaces */
 body.dark a {
     color: #9f7aea;
@@ -132,28 +135,31 @@ body.dark .social .social-button:hover {
     background-color: #2d3748; /* Fondo más oscuro en hover */
     color: #e2e8f0; /* Texto ligeramente más claro */
 }
+
 body {
     font-family: 'Anime Ace', sans-serif;
     font-size: 16px;
     background-color: #f7fafc; /* Fondo blanco */
     color: #111111; /* Texto oscuro */
 }
-    /* textos modo claro */
-body p{
-        color : #111111;
-    }
-body a {
-   color : #9f7aea;
-}
-body h2 {
-    color : #9f7aea
-}
+
+
 /* Modo oscuro para la sección de preguntas frecuentes */
 body.dark #faq {
     background-color: #2d3748; /* Fondo oscuro */
-     color: #f7fafc; /* Texto claro */
+    color: #f7fafc; /* Texto claro */
 }
-
+/* Ajusta el contenedor de preguntas frecuentes*/
+body.dark #chat-container {
+    color: #f7fafc;
+}
+/* Ajusta los backgrounds de los mensajes del chat*/
+body.dark .bg-gray-100 {
+    background-color: #4a5568;
+}
+body.dark .bg-purple-100 {
+    background-color: #6b46c1
+}
 /* Modo oscuro para la sección de main */
 body.dark main {
     background-color: #1a202c;

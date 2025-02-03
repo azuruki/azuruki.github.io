@@ -1,3 +1,17 @@
+const toggleCalendarButton = document.getElementById('toggle-calendar');
+const calendarContainer = document.getElementById('calendar-container');
+
+toggleCalendarButton.addEventListener('click', () => {
+  if (calendarContainer.style.display === 'none') {
+    calendarContainer.style.display = 'block';
+      toggleCalendarButton.textContent = "Ocultar calendario de eventos"
+  } else {
+    calendarContainer.style.display = 'none';
+       toggleCalendarButton.textContent = "Mostrar calendario de eventos"
+  }
+});
+
+
 document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -22,10 +36,10 @@ document.addEventListener('DOMContentLoaded', function() {
           title: 'Evento 3',
           start: '2024-04-01',
         },
-        {
-          title: 'Salón Comic Vlc',
-          start: '2025-02-28',
-        },
+          {
+              title: 'Salón Comic Vlc',
+              start: '2025-02-28',
+          },
       ]
     });
     calendar.render();

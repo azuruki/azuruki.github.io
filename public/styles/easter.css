@@ -1,0 +1,97 @@
+/* ---- Easter Egg Styles ---- */
+
+/* Aplica este estilo cuando el Easter Egg está activo */
+.easter-egg-active {
+    filter: hue-rotate(120deg) !important;
+  }
+  
+  /* Hace que las imágenes parezcan rotas */
+  .easter-egg-active img {
+      filter: hue-rotate(120deg) !important;
+      transform: translate(10px, 10px) rotate(10deg);
+      border-style: dashed;
+      border-color: rgba(0, 0, 0, 0.5); /* Transparencia para el borde */
+      animation: shake 0.8s ease-in-out infinite;
+  }
+  
+  /* Aplica esto a toda la página (html) */
+  .easter-egg-active {
+      overflow-x: hidden; /* Evita la barra de desplazamiento horizontal */
+      animation: glitch 0.8s ease-in-out infinite; /* Aplica la animación de glitch */
+  }
+  
+  /* Estilos para elementos específicos cuando el Easter Egg está activo */
+  .easter-egg-active .hero {
+      background: linear-gradient(to right, #007800, #006900) !important; /* Degradado verde oscuro */
+  }
+  
+  .easter-egg-active .navbar {
+      background-color: #006900 !important; /* Fondo verde oscuro */
+  }
+  
+  .easter-egg-active .text-purple-600 {
+      color: #62ff69 !important; /* Color verde brillante */
+  }
+  
+  .easter-egg-active .text-gray-700 {
+      color: #8aff6d !important; /* Otro tono de verde */
+  }
+  
+  .easter-egg-active .bg-white {
+      background-color: #228b22 !important; /* Fondo verde */
+      color: #62ff69 !important; /* Texto verde */
+  }
+  
+  .easter-egg-active a,
+  .easter-egg-active a:hover {
+      color: #62ff69 !important; /* Enlaces en verde */
+  }
+  
+  .easter-egg-active button {
+      background-color: #228b22 !important; /* Botones en verde */
+      color: #62ff69 !important; /* Texto de botones en verde */
+  }
+  
+  .easter-egg-active button:hover {
+      background-color: #0f670f !important; /* Botones al hacer hover en verde más oscuro */
+  }
+  
+  .easter-egg-active .social-button {
+      background-color: #228b22 !important; /* Botones sociales en verde */
+  }
+  
+  .easter-egg-active .social-button:hover {
+      background-color: #0f670f !important; /* Botones sociales al hacer hover en verde más oscuro */
+  }
+  
+  .easter-egg-active .footer {
+      background-color: #0f670f !important; /* Footer en verde oscuro */
+  }
+  
+  .easter-egg-active .portfolio {
+      background-color: #0f670f !important; /* Fondo del portafolio en verde oscuro */
+  }
+  
+  .easter-egg-active .kofi-section {
+      background-color: #0f670f !important; /* Fondo de Ko-fi en verde oscuro */
+  }
+  
+  .easter-egg-active .social {
+      background-color: #228b22 !important; /* Fondo de redes sociales en verde */
+  }
+  
+  /* Animaciones */
+  @keyframes shake {
+      0%, 100% { transform: translate(10px, 10px) rotate(10deg); }
+      25% { transform: translate(-10px, 10px) rotate(-10deg); }
+      50% { transform: translate(-10px, -10px) rotate(10deg); }
+      75% { transform: translate(10px, -10px) rotate(-10deg); }
+  }
+  
+  @keyframes glitch {
+    0% { transform: translate(0); }
+    25% { transform: translate(5px, -5px) skew(5deg, -5deg); }
+    50% { transform: translate(-5px, 5px) skew(-5deg, 5deg); }
+    75% { transform: translate(5px, 5px) skew(5deg, 5deg);}
+    100% { transform: translate(0); }
+  }
