@@ -1,0 +1,123 @@
+/* Estilos personalizados para imitar Beacons pero adaptado para cosplayer */
+
+/* Efectos para los botones de redes sociales */
+.social-button {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.social-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.2));
+    z-index: -1;
+    transition: all 0.4s ease;
+    transform: translateY(100%);
+}
+
+.social-button:hover::before {
+    transform: translateY(0);
+}
+
+/* Animación para la sección de redes sociales */
+.social-links a {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+}
+
+.social-links a:nth-child(1) { animation-delay: 0.1s; }
+.social-links a:nth-child(2) { animation-delay: 0.2s; }
+.social-links a:nth-child(3) { animation-delay: 0.3s; }
+.social-links a:nth-child(4) { animation-delay: 0.4s; }
+.social-links a:nth-child(5) { animation-delay: 0.5s; }
+.social-links a:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos para la sección de portafolio */
+.gallery .group {
+    transition: all 0.4s ease;
+}
+
+.gallery .group:hover {
+    transform: translateY(-10px);
+}
+
+/* Estilos para el modo oscuro adaptados */
+body.dark .social-button {
+    background-color: #2d3748;
+    color: #f7fafc;
+}
+
+body.dark .social-button:hover {
+    background-color: #4a5568;
+}
+
+/* Estilos para el header en modo oscuro */
+body.dark .hero {
+    background-color: #1a202c;
+}
+
+/* Estilos para el footer en modo oscuro */
+body.dark footer {
+    background-color: #171923;
+}
+
+/* Estilos para el calendario en modo oscuro */
+body.dark #calendar {
+    background-color: #2d3748;
+    color: #f7fafc;
+}
+
+body.dark .fc-button {
+    background-color: #4a5568 !important;
+    border-color: #2d3748 !important;
+}
+
+body.dark .fc-button:hover {
+    background-color: #6b46c1 !important;
+}
+
+/* Animación para el logo */
+.logo-pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Estilos responsivos adicionales */
+@media (max-width: 640px) {
+    .social-links {
+        gap: 10px;
+    }
+    
+    .social-button {
+        padding: 12px 16px;
+    }
+}

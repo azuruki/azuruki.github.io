@@ -1,4 +1,4 @@
- // Añadir animaciones suaves en botones
+// Añadir animaciones suaves en botones
  document.querySelectorAll('a.btn').forEach(button => {
     button.addEventListener('mouseover', () => {
         button.classList.add('shadow-2xl');
@@ -116,45 +116,111 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
-document.addEventListener('DOMContentLoaded', () => {
-  const darkModeToggle = document.getElementById("dark-mode-toggle");
-  const body = document.body;
-  const moonIcon = darkModeToggle.querySelector('span:first-child');
-  const textSpan = darkModeToggle.querySelector('span:last-child');
+document.addEventListener('DOMContentLoaded', function() {
+    // Toggle para el menú móvil
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
 
-  // Función para actualizar el estado visual del botón y los iconos
-  function updateDarkModeButton() {
-       if (body.classList.contains("dark")) {
-         moonIcon.textContent = '☀️';
-         textSpan.textContent = '☀️Modo Claro';
-      } else {
-         moonIcon.textContent = '🌙';
-         textSpan.textContent = '🌙Modo Oscuro';
-     }
-  }
-   // Cargar el estado del modo oscuro del localStorage
-  const isDarkMode = localStorage.getItem('darkMode') === 'true';
-      if (isDarkMode) {
-          body.classList.add('dark');
-  }
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+    }
 
-  // Actualizar visualmente el botón inicialmente
-  updateDarkModeButton();
+    // Toggle para el modo oscuro
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const body = document.body;
 
-  // Evento para el botón de modo oscuro
-  darkModeToggle.addEventListener("click", () => {
-      body.classList.toggle("dark");
-      localStorage.setItem('darkMode', body.classList.contains('dark'));
-       // Actualizar el estado visual del botón
-      updateDarkModeButton();
-  });
+    // Verificar si hay una preferencia guardada
+    const darkMode = localStorage.getItem('darkMode');
+    if (darkMode === 'enabled') {
+        body.classList.add('dark');
+        if (darkModeToggle) {
+            darkModeToggle.innerHTML = '<span class="sm:hidden">☀️</span><span class="md:inline hidden">☀️Modo Claro</span>';
+        }
+    } else {
+        // Asegurarse de que el botón muestre el texto correcto al cargar la página
+        if (darkModeToggle) {
+            darkModeToggle.innerHTML = '<span class="sm:hidden">🌙</span><span class="md:inline hidden">🌙Modo Oscuro</span>';
+        }
+    }
 
-   // Evento para el botón de menú
-  const menuToggle = document.getElementById('menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-      menuToggle.addEventListener('click', () => {
-          mobileMenu.classList.toggle('hidden');
-      });
+    if (darkModeToggle) {
+        darkModeToggle.addEventListener('click', function() {
+            if (body.classList.contains('dark')) {
+                // Cambiar a modo claro
+                body.classList.remove('dark');
+                localStorage.setItem('darkMode', 'disabled');
+                darkModeToggle.innerHTML = '<span class="sm:hidden">🌙</span><span class="md:inline hidden">🌙Modo Oscuro</span>';
+                
+                // Forzar actualización de estilos
+                document.documentElement.style.backgroundColor = '';
+            } else {
+                // Cambiar a modo oscuro
+                body.classList.add('dark');
+                localStorage.setItem('darkMode', 'enabled');
+                darkModeToggle.innerHTML = '<span class="sm:hidden">☀️</span><span class="md:inline hidden">☀️Modo Claro</span>';
+                
+                // Forzar actualización de estilos
+                document.documentElement.style.backgroundColor = '#1a202c';
+            }
+        });
+    }
+    
+    // Añadir efecto de clic a los botones sociales
+    const socialButtons = document.querySelectorAll('.social-button');
+    socialButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            this.classList.add('clicked');
+            setTimeout(() => {
+                this.classList.remove('clicked');
+            }, 200);
+        });
+    });
+    
+    // Animación de entrada para secciones al hacer scroll
+    const sections = document.querySelectorAll('section');
+    
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+    
+    const sectionObserver = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    sections.forEach(section => {
+        section.classList.add('opacity-0');
+        sectionObserver.observe(section);
+    });
+    
+    // Smooth scroll para los enlaces internos
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80, // Ajuste para el navbar fijo
+                    behavior: 'smooth'
+                });
+                
+                // Cerrar menú móvil si está abierto
+                if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            }
+        });
+    });
 });
 
 

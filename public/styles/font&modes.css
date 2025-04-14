@@ -5,6 +5,7 @@
     font-style: normal;
 }
 
+/* Animaciones básicas */
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -16,8 +17,103 @@
     }
 }
 
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Clases de animación */
 .fade-in {
     animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.6s ease-out forwards;
+}
+
+.slide-in-right {
+    animation: slideInRight 0.6s ease-out forwards;
+}
+
+.bounce {
+    animation: bounce 2s ease infinite;
+}
+
+.float {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Animaciones para elementos al hacer scroll */
+.reveal {
+    opacity: 0;
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+}
+
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.8s ease;
+}
+
+.reveal-left.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.8s ease;
+}
+
+.reveal-right.active {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 /* Efecto de escala al hacer clic */
@@ -40,30 +136,45 @@ body.dark {
 }
 
 /* Header en modo oscuro */
-body.dark .hero {
-    background: linear-gradient(to right, #4a5568, #2d3748); /* Gradiente oscuro */
-    color: #f7fafc;
+body.dark .hero,
+body.dark header.hero,
+body.dark .hero.bg-white {
+    background: linear-gradient(to right, #4a5568, #2d3748) !important; /* Gradiente oscuro */
+    color: #f7fafc !important;
 }
 
 /* Navbar en modo oscuro */
-body.dark .navbar {
-    background-color: #2d3748;
-    color: #f7fafc;
+body.dark .navbar,
+body.dark nav,
+body.dark nav.bg-white {
+    background-color: #2d3748 !important;
+    color: #f7fafc !important;
 }
 /* Modifica el elemento que contiene al "Azukuki" en el nav */
-body.dark .text-purple-600{
-    color: #9f7aea;
+body.dark .text-purple-600,
+body.dark #easter-egg-title{
+    color: #9f7aea !important;
 }
 /*Letras en modo oscuro */
 body.dark p{
     color: #e2e8f0;
 }
+body.dark .bg-gray-100 {
+    background-color: #4a5568;
+    color: #f7fafc;
+}
+
 body.dark .bg-gray-100 p {
-    color: #111111; /* Textos en negro en modo oscuro */
+    color: #f7fafc; /* Textos claros en modo oscuro */
+}
+
+body.dark .bg-purple-100 {
+    background-color: #6b46c1;
+    color: #f7fafc;
 }
 
 body.dark .bg-purple-100 p{
-    color: #111111;
+    color: #f7fafc;
 }
 /* Enlaces */
 body.dark a {
@@ -160,7 +271,83 @@ body.dark .bg-gray-100 {
 body.dark .bg-purple-100 {
     background-color: #6b46c1
 }
-/* Modo oscuro para la sección de main */
-body.dark main {
-    background-color: #1a202c;
+/* Modo oscuro para la sección de about */
+body.dark main,
+body.dark #about,
+body.dark .about,
+body.dark section.bg-gray-50,
+body.dark section.bg-white {
+    background-color: #1a202c !important;
+    color: #f7fafc;
+}
+
+body.dark .max-w-4xl.mx-auto.bg-white {
+    background-color: #2d3748 !important;
+    color: #f7fafc;
+}
+
+/* Estilos para partículas y conectores entre secciones */
+.particle-container {
+    position: relative;
+    height: 50px;
+    margin-top: -25px;
+    margin-bottom: -25px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #9f7aea;
+    opacity: 0.6;
+    filter: blur(1px);
+}
+
+body.dark .particle {
+    background-color: #805ad5;
+    opacity: 0.8;
+}
+
+/* Conectores visuales entre secciones */
+.section-connector {
+    height: 60px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.section-connector::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, #9f7aea, transparent);
+    transform: translateX(-50%);
+}
+
+.section-connector::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #9f7aea;
+    transform: translateX(-50%) translateY(50%);
+    box-shadow: 0 0 10px #9f7aea;
+}
+
+body.dark .section-connector::before {
+    background: linear-gradient(to bottom, transparent, #805ad5, transparent);
+}
+
+body.dark .section-connector::after {
+    background-color: #805ad5;
+    box-shadow: 0 0 10px #805ad5;
 }
