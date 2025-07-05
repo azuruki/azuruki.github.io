@@ -1,0 +1,717 @@
+/* ===== TEMA KUROMI - SOLO MODO OSCURO ===== */
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #181820;
+    color: #f3f3f3;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.hero, .social, .about, .portfolio, .kofi-section, .center {
+    background: #181820 !important;
+    color: #f3f3f3;
+}
+
+.section-connector {
+    height: 40px;
+    background: #232334;
+    border: none;
+}
+
+.text-gradient, .text-shimmer, .text-pink-600, .text-purple-600, .text-gradient, .text-pink-400, .text-purple-400 {
+    color: #fff !important;
+    background: none !important;
+    -webkit-background-clip: initial !important;
+    -webkit-text-fill-color: initial !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #fff !important;
+}
+
+.btn, .social-button {
+    background: #232334 !important;
+    color: #fff !important;
+    border-radius: 0.75rem;
+    border: none;
+    box-shadow: none;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.btn:hover, .social-button:hover {
+    background: #35354a !important;
+    color: #ff69b4 !important;
+}
+
+nav, nav.scrolled {
+    background: #181820 !important;
+    box-shadow: none !important;
+    border-bottom: 1px solid #232334;
+}
+
+footer.footer {
+    background: #181820 !important;
+    color: #fff !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 3rem 0 2rem 0 !important;
+}
+
+.footer img {
+    width: 8rem !important;
+    height: 8rem !important;
+    object-fit: cover !important;
+    aspect-ratio: 1/1 !important;
+    border-radius: 50% !important;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px solid #ff69b4 !important;
+    box-shadow: none !important;
+}
+
+.footer h3, .footer p, .footer span, .footer a {
+    color: #fff !important;
+    text-align: center !important;
+    font-weight: 500;
+    margin: 0 auto !important;
+}
+
+.footer .flex {
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 2rem !important;
+}
+
+.footer .border-t, .footer .pt-6, .footer .max-w-md {
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.footer i {
+    color: #ff69b4 !important;
+}
+
+a {
+    color: #ff69b4;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: #fff;
+}
+
+/* Eliminar gradientes, fondos claros, y decoraciones innecesarias */
+.bg-gradient-to-r, .bg-white, .bg-gray-50, .bg-pink-50, .bg-purple-50, .bg-gray-900, .bg-gray-800, .bg-gray-100, .bg-gray-200, .bg-gray-700 {
+    background: #181820 !important;
+    color: #f3f3f3 !important;
+}
+
+.border-pink-100, .border-pink-200, .border-purple-200, .border-gray-700, .border-gray-200 {
+    border-color: #232334 !important;
+}
+
+.shadow-lg, .shadow-xl, .shadow-md, .shadow-sm, .hover\:shadow-xl, .hover\:shadow-lg, .hover\:shadow-md, .hover\:shadow-sm {
+    box-shadow: none !important;
+}
+
+/* Eliminar decoraciones SVG de fondo */
+.hero::before, .social::before, .footer::before, .section-connector::before, .kofi-section .container::before {
+    display: none !important;
+}
+
+/* Botón de modo oscuro oculto */
+#dark-mode-toggle { display: none !important; }
+
+/* Cursor personalizado sigue activo */
+.custom-cursor {
+    background: #ff69b4 !important;
+}
+
+/* ===== TEMA KUROMI - ESTILOS PROFESIONALES ===== */
+
+/* Importación de fuentes adicionales */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+/* ===== ESTILOS BASE MEJORADOS ===== */
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, var(--kuromi-white) 0%, var(--kuromi-gray) 100%);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ===== HEADER Y NAVEGACIÓN ===== */
+
+.hero, .hero .container, .hero .fade-in-up {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    width: 100% !important;
+}
+
+.hero h1, .hero h2 {
+    width: 100% !important;
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+}
+
+.hero {
+    background: var(--gradient-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+}
+
+.hero h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--kuromi-white);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 2;
+}
+
+/* ===== SECCIÓN DE REDES SOCIALES ===== */
+
+.social {
+    background: var(--gradient-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.social::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+.logo-pulse {
+    animation: pulse 2.5s cubic-bezier(0.4,0,0.2,1) infinite;
+    box-shadow: var(--glow-pink);
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.04); }
+}
+
+.social-button {
+    background: var(--kuromi-white);
+    color: var(--kuromi-pink);
+    border: 2px solid transparent;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+    transition: all var(--transition-normal);
+}
+
+.social-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-primary);
+    transition: left var(--transition-normal);
+    z-index: -1;
+}
+
+.social-button:hover::before {
+    left: 0;
+}
+
+.social-button:hover {
+    color: var(--kuromi-white);
+    border-color: var(--kuromi-white);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* ===== NAVEGACIÓN ===== */
+
+nav {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 105, 180, 0.2);
+    transition: all var(--transition-normal);
+}
+
+nav.scrolled {
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: var(--shadow-md);
+}
+
+nav a {
+    position: relative;
+    font-weight: 500;
+    transition: color var(--transition-fast);
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gradient-primary);
+    transition: width var(--transition-normal);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* ===== SECCIONES DE CONTENIDO ===== */
+
+.about {
+    background: var(--kuromi-gray);
+}
+
+.about .container {
+    background: var(--kuromi-white);
+    border-radius: var(--border-radius-xl);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(255, 105, 180, 0.1);
+    overflow: hidden;
+    transition: transform var(--transition-normal);
+}
+
+.about .container:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.about img {
+    border: 4px solid var(--kuromi-pink);
+    box-shadow: var(--shadow-pink);
+    transition: all var(--transition-normal);
+}
+
+.about img:hover {
+    transform: scale(1.05);
+    box-shadow: var(--glow-pink);
+}
+
+/* ===== PORTFOLIO Y CAROUSEL ===== */
+
+.portfolio {
+    background: var(--kuromi-white);
+}
+
+.carousel-container {
+    border-radius: var(--border-radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+    border: 1px solid rgba(255, 105, 180, 0.2);
+}
+
+.carousel-button {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--kuromi-pink);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    backdrop-filter: blur(10px);
+}
+
+.carousel-button:hover {
+    background: var(--kuromi-pink);
+    color: var(--kuromi-white);
+    transform: scale(1.1);
+    box-shadow: var(--shadow-pink);
+}
+
+/* ===== BOTONES MEJORADOS ===== */
+
+.btn {
+    background: var(--gradient-primary);
+    color: var(--kuromi-white);
+    border: none;
+    border-radius: var(--border-radius-lg);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left var(--transition-slow);
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg), var(--glow-pink);
+}
+
+/* ===== SECCIÓN KO-FI ===== */
+
+.kofi-section {
+    background: var(--kuromi-gray);
+}
+
+.kofi-section .container {
+    background: var(--gradient-secondary);
+    border-radius: var(--border-radius-xl);
+    box-shadow: var(--shadow-xl);
+    overflow: hidden;
+    position: relative;
+}
+
+.kofi-section .container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="hearts" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M10 15c-2-3-6-6-6-9 0-3 2-5 5-5s5 2 5 5c0 3-4 6-6 9z" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23hearts)"/></svg>');
+    opacity: 0.3;
+}
+
+.kofi-section img {
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+    transition: all var(--transition-normal);
+}
+
+.kofi-section img:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: var(--shadow-xl);
+}
+
+/* ===== CONECTORES DE SECCIÓN ===== */
+
+.section-connector {
+    height: 60px;
+    background: var(--gradient-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.section-connector::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><path d="M0 20 L50 0 L100 20" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"/></svg>');
+    background-size: 100% 100%;
+    animation: wave 3s ease-in-out infinite;
+}
+
+@keyframes wave {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(10px); }
+}
+
+/* ===== ANIMACIONES Y EFECTOS ===== */
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.5s cubic-bezier(0.4,0,0.2,1);
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.6s ease-out;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+@media (max-width: 768px) {
+    .social-button {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+    .hero h2 {
+        font-size: var(--text-3xl);
+    }
+    
+    .about .container {
+        margin: 0 1rem;
+    }
+    
+    .carousel-container {
+        height: 300px;
+    }
+}
+
+/* ===== MODO OSCURO ===== */
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: var(--gradient-dark);
+        color: var(--kuromi-white);
+    }
+    
+    nav {
+        background: rgba(26, 26, 26, 0.95);
+        border-bottom-color: rgba(255, 105, 180, 0.3);
+    }
+    
+    .about {
+        background: var(--kuromi-dark-gray);
+    }
+    
+    .about .container {
+        background: var(--kuromi-black);
+        border-color: rgba(255, 105, 180, 0.2);
+    }
+    
+    .portfolio {
+        background: var(--kuromi-black);
+    }
+    
+    .kofi-section {
+        background: var(--kuromi-dark-gray);
+    }
+}
+
+/* ===== UTILIDADES ADICIONALES ===== */
+
+.text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.glow-effect {
+    box-shadow: var(--glow-pink);
+}
+
+.glow-effect:hover {
+    box-shadow: var(--glow-magenta);
+}
+
+.border-gradient {
+    border: 2px solid;
+    border-image: var(--gradient-primary) 1;
+}
+
+/* ===== MEJORAS DE ACCESIBILIDAD ===== */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ===== ESTILOS PARA SCROLL SUAVE ===== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ===== ESTILOS PARA FOCUS VISIBLE ===== */
+
+*:focus {
+    outline: 2px solid var(--kuromi-pink);
+    outline-offset: 2px;
+}
+
+/* ===== ESTILOS PARA SELECCIÓN DE TEXTO ===== */
+
+::selection {
+    background: var(--kuromi-pink);
+    color: var(--kuromi-white);
+}
+
+::-moz-selection {
+    background: var(--kuromi-pink);
+    color: var(--kuromi-white);
+}
+
+/* Logo perfectamente cuadrado y centrado */
+.social img,
+.footer img {
+    width: 8rem !important;
+    height: 8rem !important;
+    object-fit: cover !important;
+    aspect-ratio: 1/1 !important;
+    border-radius: 50% !important;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Portafolio sin fondo morado */
+.portfolio, .carousel-container {
+    background: #181820 !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.carousel-button {
+    background: #232334 !important;
+    color: #ff69b4 !important;
+}
+
+.carousel-button:hover {
+    background: #35354a !important;
+    color: #fff !important;
+}
+
+/* Eliminar decoraciones y gradientes en portafolio */
+.bg-gradient-to-r, .bg-white, .bg-pink-50, .bg-purple-50 {
+    background: #181820 !important;
+}
+
+/* Quitar decoraciones de líneas y bordes innecesarios */
+.w-24, .h-1, .bg-gradient-to-r, .from-pink-400, .to-purple-600, .rounded-full, .mb-6 {
+    background: none !important;
+    border: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    width: 0 !important;
+}
+
+@font-face {
+    font-family: 'Anime Ace';
+    src: url('/fonts/animeace2_reg.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Anime Ace Bold';
+    src: url('/fonts/animeace2_bld.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+body, html, * {
+    font-family: 'Anime Ace', 'Anime Ace Bold', Arial, sans-serif !important;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #ff69b4 !important;
+    text-align: center !important;
+    font-family: 'Anime Ace Bold', 'Anime Ace', Arial, sans-serif !important;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+p, span, li, a, button, input, label, .btn, .social-button {
+    color: #fff !important;
+    font-family: 'Anime Ace', Arial, sans-serif !important;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.btn, .social-button {
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Foto principal centrada arriba */
+#social .main-photo {
+    display: block;
+    margin: 2rem auto 1rem auto;
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #ff69b4;
+    box-shadow: 0 0 0.5rem #ff69b4;
+}
+
+#social .main-name {
+    color: #ff69b4;
+    font-size: 2.5rem;
+    font-family: 'Anime Ace Bold', 'Anime Ace', Arial, sans-serif !important;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    margin-top: 0.5rem;
+    letter-spacing: 2px;
+}
+
+/* Centrar y espaciar bloques principales */
+.container, .max-w-5xl, .max-w-4xl {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+}
+
+/* Ajustar paddings y márgenes para cuadrar todo */
+section, .section {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+} 

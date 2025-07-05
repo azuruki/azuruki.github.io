@@ -168,18 +168,9 @@ async function fetchInstagramPhotos() {
                     const img = document.createElement('img');
                     img.src = image.src;
                     img.alt = image.alt;
-                    img.className = 'w-auto h-full max-h-full object-contain rounded-lg shadow-lg transform group-hover:scale-105 transition duration-300';
+                    img.className = 'w-auto h-full max-h-full object-contain rounded-lg';
                     
-                    const overlay = document.createElement('div');
-                    overlay.className = 'absolute inset-0 bg-gradient-to-r from-purple-800 to-black bg-opacity-80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 rounded-lg';
-                    
-                    const caption = document.createElement('span');
-                    caption.className = 'text-white text-lg font-medium';
-                    caption.textContent = image.alt;
-                    
-                    overlay.appendChild(caption);
                     imgContainer.appendChild(img);
-                    imgContainer.appendChild(overlay);
                     slide.appendChild(imgContainer);
                     carouselTrack.appendChild(slide);
                 }

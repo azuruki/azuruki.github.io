@@ -1,8 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Azurukisan | Cosplayer Profesional</title>
+    <meta name="description" content="Portafolio profesional de Azurukisan, cosplayer apasionada que da vida a personajes de anime y videojuegos con creatividad y dedicación.">
+    <meta name="keywords" content="cosplay, anime, videojuegos, Azurukisan, cosplayer, eventos, convenciones">
+    <meta name="author" content="Azurukisan">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://azuruki.github.io/">
+    <meta property="og:title" content="Azurukisan | Cosplayer Profesional">
+    <meta property="og:description" content="Portafolio profesional de Azurukisan, cosplayer apasionada que da vida a personajes de anime y videojuegos.">
+    <meta property="og:image" content="/public/images/ico.jpeg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://azuruki.github.io/">
+    <meta property="twitter:title" content="Azurukisan | Cosplayer Profesional">
+    <meta property="twitter:description" content="Portafolio profesional de Azurukisan, cosplayer apasionada que da vida a personajes de anime y videojuegos.">
+    <meta property="twitter:image" content="/public/images/ico.jpeg">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/public/images/ico.jpeg" type="image/png">
+    <link rel="apple-touch-icon" href="/public/images/ico.jpeg">
+    
+    <!-- Estilos -->
+    <link href="/public/styles/variables.css" rel="stylesheet">
+    <link href="/public/styles/base.css" rel="stylesheet">
+    <link href="/public/styles/kuromi-theme.css" rel="stylesheet">
     <link href="/public/styles/output.css" rel="stylesheet">
     <link href="/public/styles/font&modes.css" rel="stylesheet">
     <link href="/public/styles/calendar.css" rel="stylesheet">
@@ -10,97 +39,68 @@
     <link href="/public/styles/beacons-style.css" rel="stylesheet">
     <link href="/public/styles/section-connectors.css" rel="stylesheet">
     <link href="/public/styles/instagram-carousel.css" rel="stylesheet">
-    <link rel="icon" href="/public/images/ico.jpeg" type="image/png">
-    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.css' rel='stylesheet' />
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.js'></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="/public/js/animations.js" defer></script>
-
-    <title>Azurukisan | Cosplayer</title>
-    <meta name="description" content="Portafolio profesional de Azurukisan, cosplayer apasionada que da vida a personajes de anime y videojuegos.">
     
+    <!-- Scripts -->
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.js' defer></script>
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    <script src="/public/js/animations.js" defer></script>
+    
+    <!-- Preload de recursos críticos -->
+    <link rel="preload" href="/public/images/ico.jpeg" as="image">
+    <link rel="preload" href="/public/images/poweruwu.jpg" as="image">
 </head>
 <body class="Anime ace bg-gray-50">
 
     <!-- Sección de Redes Sociales (Ahora al principio) -->
-    <section id="social" class="social py-10 bg-gradient-to-r from-purple-500 to-pink-500 text-white">
+    <section id="social" class="social py-16">
         <div class="container mx-auto px-4 text-center">
-            <img src="/public/images/ico.jpeg" alt="Azurukisan" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white shadow-lg logo-pulse">
-            <h1 class="text-3xl md:text-5xl font-bold mb-2 drop-shadow-lg">Azurukisan</h1>
-            <p class="text-lg md:text-xl mb-6">✨ Cosplayer & Content Creator ✨</p>
-            
-            <div class="social-links flex flex-wrap justify-center gap-4 mt-6 max-w-3xl mx-auto">
-                <a href="https://instagram.com/azurukisan" target="_blank" 
-                   class="social-button w-full sm:w-64 px-6 py-4 bg-white text-purple-600 font-bold text-lg rounded-lg flex items-center justify-center gap-3 transform transition-all duration-300 ease-in-out hover:scale-105 hover:bg-gray-100 hover:shadow-lg active:scale-95">
-                   <i class="fab fa-instagram text-xl"></i> Instagram
-                </a>
-                
-                <a href="https://tiktok.com/@_azurukisan_" target="_blank" 
-                   class="social-button w-full sm:w-64 px-6 py-4 bg-white text-purple-600 font-bold text-lg rounded-lg flex items-center justify-center gap-3 transform transition-all duration-300 ease-in-out hover:scale-105 hover:bg-gray-100 hover:shadow-lg active:scale-95">
-                   <i class="fab fa-tiktok text-xl"></i> TikTok
-                </a>
-
-                <a href="https://twitter.com/_azurukisan_" target="_blank" 
-                   class="social-button w-full sm:w-64 px-6 py-4 bg-white text-purple-600 font-bold text-lg rounded-lg flex items-center justify-center gap-3 transform transition-all duration-300 ease-in-out hover:scale-105 hover:bg-gray-100 hover:shadow-lg active:scale-95">
-                   <i class="fab fa-twitter text-xl"></i> Twitter
-                </a>
-
-                <a href="https://ko-fi.com/azurukisan" target="_blank" 
-                   class="social-button w-full sm:w-64 px-6 py-4 bg-white text-purple-600 font-bold text-lg rounded-lg flex items-center justify-center gap-3 transform transition-all duration-300 ease-in-out hover:scale-105 hover:bg-gray-100 hover:shadow-lg active:scale-95">
-                   <i class="fas fa-coffee text-xl"></i> Ko-fi
-                </a>
-
-                <a href="https://paypal.me/azurukisan/" target="_blank"
-                   class="social-button w-full sm:w-64 px-6 py-4 bg-white text-purple-600 font-bold text-lg rounded-lg flex items-center justify-center gap-3 transform transition-all duration-300 ease-in-out hover:scale-105 hover:bg-gray-100 hover:shadow-lg active:scale-95">
-                   <i class="fab fa-paypal text-xl"></i> PayPal
-                </a>
-
-                <a href="mailto:paulabassgirl@gmail.com" 
-                   class="social-button w-full sm:w-64 px-6 py-4 bg-white text-purple-600 font-bold text-lg rounded-lg flex items-center justify-center gap-3 transform transition-all duration-300 ease-in-out hover:scale-105 hover:bg-gray-100 hover:shadow-lg active:scale-95">
-                   <i class="fas fa-envelope text-xl"></i> Contacto
-                </a>
+            <img src="/public/images/Frieren.jpg" alt="Azurukisan" class="main-photo">
+            <div class="main-name">Azurukisan</div>
+            <p class="text-xl md:text-2xl mb-8 opacity-90">✨ Cosplayer & Content Creator ✨</p>
+            <div class="social-links grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 max-w-4xl mx-auto">
+                <a href="https://instagram.com/azurukisan" target="_blank" class="social-button px-6 py-4 font-bold text-lg rounded-xl flex items-center justify-center gap-3">INSTAGRAM</a>
+                <a href="https://tiktok.com/@_azurukisan_" target="_blank" class="social-button px-6 py-4 font-bold text-lg rounded-xl flex items-center justify-center gap-3">TIKTOK</a>
+                <a href="https://twitter.com/_azurukisan_" target="_blank" class="social-button px-6 py-4 font-bold text-lg rounded-xl flex items-center justify-center gap-3">TWITTER</a>
+                <a href="https://ko-fi.com/azurukisan" target="_blank" class="social-button px-6 py-4 font-bold text-lg rounded-xl flex items-center justify-center gap-3">KO-FI</a>
+                <a href="https://paypal.me/azurukisan/" target="_blank" class="social-button px-6 py-4 font-bold text-lg rounded-xl flex items-center justify-center gap-3">PAYPAL</a>
+                <a href="mailto:paulabassgirl@gmail.com" class="social-button px-6 py-4 font-bold text-lg rounded-xl flex items-center justify-center gap-3">CONTACTO</a>
             </div>
         </div>
     </section>
     
     <div class="section-connector animated"></div>
     
-    <header class="hero bg-white text-center py-16">
+    <header class="hero text-center py-20">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-purple-600 mb-4">Bienvenido a mi mundo</h2>
-            <p class="text-lg text-gray-700 max-w-3xl mx-auto">Un recorrido por mi pasión por el cosplay y la cultura anime</p>
-            <a href="#portfolio" class="btn bg-purple-600 text-white px-6 py-3 rounded-lg mt-6 inline-block shadow-lg hover:bg-purple-700 transition transform hover:scale-105">
-                Ver Portafolio
-            </a>
+            <div class="fade-in-up">
+                <h1 class="text-5xl font-bold mb-4" style="color:#ff69b4;">Bienvenido a mi mundo</h1>
+                <p class="text-2xl mb-8" style="color:#fff;">Un recorrido por mi pasión por el cosplay y la cultura anime</p>
+                <a href="#portfolio" class="btn px-8 py-4 text-lg">
+                    Ver Portafolio
+                </a>
+            </div>
         </div>
     </header>
     
     <div class="section-connector light-to-dark"></div>
     
-    <nav class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
-        <div class="container mx-auto flex justify-between items-center px-4 py-3">
+    <nav class="sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center px-4 py-4">
             <!-- Título -->
-            <div id="easter-egg-title" class="text-xl font-bold text-purple-600 dark:text-purple-400">Azuruki🌸</div>
+            <div id="easter-egg-title" class="text-2xl font-bold">Azuruki🌸</div>
         
             <!-- Links en pantallas grandes -->
-            <ul class="hidden md:flex space-x-6 text-gray-700 dark:text-gray-300 font-medium">
-                <li><a href="#social" class="hover:text-purple-500 transition-colors">Redes</a></li>
-                <li><a href="#about" class="hover:text-purple-500 transition-colors">Sobre mí</a></li>
-                <li><a href="#portfolio" class="hover:text-purple-500 transition-colors">Portafolio</a></li>
-                <li><a href="/public/pages/amazon.html" class="hover:text-purple-500 transition-colors">WishList</a></li>
-                <li><a href="/public/pages/faq.html" class="hover:text-purple-500 transition-colors">FAQ</a></li>
-               <!--<li><a href="/public/pages/foro.html" class="hover:text-purple-500 transition-colors">Foro</a></li>--> 
+            <ul class="hidden md:flex space-x-8 font-medium">
+                <li><a href="#social" class="text-lg">Redes</a></li>
+                <li><a href="#about" class="text-lg">Sobre mí</a></li>
+                <li><a href="#portfolio" class="text-lg">Portafolio</a></li>
+                <li><a href="/public/pages/amazon.html" class="text-lg">WishList</a></li>
+                <li><a href="/public/pages/faq.html" class="text-lg">FAQ</a></li>
+               <!--<li><a href="/public/pages/foro.html" class="hover:text-pink-500 transition-colors text-lg">Foro</a></li>--> 
             </ul>
         
-            <!-- Botón de modo oscuro -->
-            <button id="dark-mode-toggle" class="flex-shrink-0 text-purple-600 focus:outline-none px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:text-white sm:text-sm md:text-base lg:px-5 lg:py-3 xl:px-6 xl:py-4 sm:px-3" aria-label="Cambiar a modo oscuro">
-                <span class="sm:hidden">🌙</span> 
-                <span class="md:inline hidden">🌙Modo Oscuro</span> 
-            </button>
-        
             <!-- Botón de menú para móvil -->
-            <button id="menu-toggle" class="block md:hidden text-purple-600 focus:outline-none" aria-label="Abrir menú de navegación">
+            <button id="menu-toggle" class="block md:hidden" aria-label="Abrir menú de navegación">
                 <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
@@ -108,30 +108,35 @@
         </div>
         
         <!-- Links ocultos en móvil -->
-        <ul id="mobile-menu" class="hidden md:hidden flex-col space-y-4 bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-medium px-4 py-2">
-            <li><a href="#social" class="hover:text-purple-500 transition-colors">Redes</a></li>
-            <li><a href="#about" class="hover:text-purple-500 transition-colors">Sobre mí</a></li>
-            <li><a href="#portfolio" class="hover:text-purple-500 transition-colors">Portafolio</a></li>
-            <li><a href="/public/pages/amazon.html" class="hover:text-purple-500 transition-colors">WishList</a></li>
-            <li><a href="/public/pages/faq.html" class="hover:text-purple-500 transition-colors">FAQ</a></li>
-            <!--<li><a href="/public/pages/foro.html" class="hover:text-purple-500 transition-colors">Foro</a></li>-->
+        <ul id="mobile-menu" class="hidden md:hidden flex-col space-y-4 px-4 py-4 border-t">
+            <li><a href="#social" class="text-lg block py-2">Redes</a></li>
+            <li><a href="#about" class="text-lg block py-2">Sobre mí</a></li>
+            <li><a href="#portfolio" class="text-lg block py-2">Portafolio</a></li>
+            <li><a href="/public/pages/amazon.html" class="text-lg block py-2">WishList</a></li>
+            <li><a href="/public/pages/faq.html" class="text-lg block py-2">FAQ</a></li>
+            <!--<li><a href="/public/pages/foro.html" class="hover:text-pink-500 transition-colors text-lg block py-2">Foro</a></li>-->
         </ul>
     </nav>
     
     <div class="section-connector decorated"></div>
     
     <!-- About Section -->
-    <section id="about" class="about py-16 bg-gray-50">
+    <section id="about" class="about py-20">
         <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
-                <div class="p-8">
-                    <h2 class="text-3xl font-semibold text-purple-600 text-center mb-6">Sobre mí</h2>
-                    <div class="flex flex-col md:flex-row items-center gap-6">
-                        <img src="/public/images/poweruwu.jpg" alt="Azurukisan cosplay" class="w-48 h-48 rounded-full object-cover border-4 border-purple-200 shadow-lg">
-                        <div>
-                            <p class="text-lg text-gray-700 leading-relaxed">Hola, soy <span class="font-bold text-purple-600">Azurukisan</span>, una apasionada del cosplay desde 2021. Me encanta dar vida a mis personajes favoritos con creatividad y dedicación.</p>
-                            <p class="mt-4 text-lg text-gray-700 leading-relaxed">Cada cosplay cuenta una historia, y mi objetivo es compartirla contigo a través de mis redes sociales y eventos. Me especializo en personajes de anime y videojuegos, poniendo especial atención a los detalles y la caracterización.</p>
-                            <p class="mt-4 text-lg text-gray-700 leading-relaxed">¡Gracias por visitar mi página! No dudes en seguirme en mis redes para estar al día con mis nuevos proyectos.</p>
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-12 fade-in-up">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4">Sobre mí</h2>
+                </div>
+                <div class="about-card" style="background:#232334; border-radius:2rem; padding:2rem; display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:2rem;">
+                    <img src="/public/images/poweruwu.jpg" alt="Azurukisan cosplay" style="width:260px; height:260px; object-fit:cover; border-radius:1.5rem; border:3px solid #ff69b4; box-shadow:0 0 0.5rem #ff69b4; margin:auto;">
+                    <div style="flex:1; min-width:260px; max-width:500px; text-align:center;">
+                        <p style="color:#fff; font-size:1.3rem; margin-bottom:2rem;">
+                            ¡Gracias por visitar mi página! No dudes en seguirme en mis redes para estar al día con mis nuevos proyectos.<br>
+                            Una apasionada del cosplay desde 2021, me encanta dar vida a mis personajes favoritos con creatividad y dedicación.
+                        </p>
+                        <div style="display:flex; flex-direction:column; gap:1rem; align-items:center;">
+                            <div style="border:2px solid #ff69b4; border-radius:1rem; padding:0.5rem 2rem; color:#ff69b4; font-weight:bold; font-size:1.1rem; background:none;">2021 &nbsp; INICIO EN EL COSPLAY</div>
+                            <div style="border:2px solid #ff69b4; border-radius:1rem; padding:0.5rem 2rem; color:#ff69b4; font-weight:bold; font-size:1.1rem; background:none;">50+ &nbsp; COSPLAYS REALIZADOS</div>
                         </div>
                     </div>
                 </div>
@@ -141,16 +146,22 @@
     
     <div class="section-connector light-to-dark animated"></div>
 
-    <section class="center mx-auto px-4 py-16 bg-gray-50">
+    <section class="center mx-auto px-4 py-20 bg-gray-50">
         <div class="container mx-auto max-w-5xl">
-            <div class="bg-white rounded-xl shadow-md overflow-hidden p-6">
-                <h2 class="text-3xl font-semibold text-purple-600 text-center mb-6">Próximos eventos</h2>
-                <p class="text-center text-gray-600 mb-6">Mantente al día con mis apariciones en eventos y convenciones</p>
-                <button id="toggle-calendar" class="btn bg-purple-600 text-white px-6 py-3 rounded-lg mx-auto block shadow-lg hover:bg-purple-700 transition transform hover:scale-105 mb-6">
-                    <i class="far fa-calendar-alt mr-2"></i> Ocultar calendario de eventos
-                </button>
-                <div id='calendar-container' class="calendar-container">
-                    <div id='calendar' class="rounded-lg overflow-hidden shadow-sm"></div>
+            <div class="text-center mb-12 fade-in-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-gradient mb-4">Próximos eventos</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-pink-400 to-purple-600 mx-auto rounded-full mb-6"></div>
+                <p class="text-xl text-gray-600">Mantente al día con mis apariciones en eventos y convenciones</p>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-pink-100">
+                <div class="p-8 md:p-12">
+                    <button id="toggle-calendar" class="btn mx-auto block mb-8">
+                        <i class="far fa-calendar-alt mr-3"></i> Ocultar calendario de eventos
+                    </button>
+                    <div id='calendar-container' class="calendar-container">
+                        <div id='calendar' class="rounded-xl overflow-hidden shadow-lg"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -159,13 +170,18 @@
     <div class="section-connector dark-to-light decorated"></div>
     
     <!-- Portfolio Section with Instagram Carousel -->
-    <section id="portfolio" class="portfolio py-16 bg-white">
+    <section id="portfolio" class="portfolio py-20">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-semibold text-center text-purple-600 mb-2">Mi Portafolio</h2>
-            <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto">Explora algunos de mis mejores trabajos de cosplay, donde doy vida a mis personajes favoritos con pasión y dedicación:</p>
+            <div class="text-center mb-12 fade-in-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-gradient mb-4">Mi Portafolio</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-pink-400 to-purple-600 mx-auto rounded-full mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Explora algunos de mis mejores trabajos de cosplay, donde doy vida a mis personajes favoritos con pasión y dedicación
+                </p>
+            </div>
             
             <!-- Instagram Carousel -->
-            <div class="carousel-container h-96 md:h-[500px] mt-10 max-w-6xl mx-auto shadow-xl">
+            <div class="carousel-container h-96 md:h-[500px] mt-12 max-w-6xl mx-auto">
                 <div class="carousel-track h-full">
                     <!-- Las imágenes se cargarán dinámicamente desde JavaScript -->
                 </div>
@@ -184,12 +200,10 @@
                 </div>
             </div>
             
-            <div class="text-center mt-6">
-                <p class="text-gray-600 mb-4">¡Sígueme en Instagram para ver más de mi trabajo!</p>
-                <a href="https://instagram.com/azurukisan" target="_blank" 
-                   class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold rounded-lg shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105">
-                   <i class="fab fa-instagram text-xl"></i> @azurukisan
-                </a>
+            <!-- Instagram call to action debajo del carrusel -->
+            <div class="text-center mt-12">
+                <p style="color:#fff; font-size:1.3rem; margin-bottom:1.5rem; font-family:'Anime Ace', Arial, sans-serif;">¡Sígueme en Instagram para ver más!</p>
+                <a href="https://instagram.com/azurukisan" target="_blank" class="btn px-8 py-4 text-lg" style="background:#232334; color:#ff69b4; border-radius:1rem; font-family:'Anime Ace Bold','Anime Ace',Arial,sans-serif; font-size:1.3rem; font-weight:bold; letter-spacing:1px;">@AZURUKISAN</a>
             </div>
         </div>
     </section>
@@ -197,28 +211,18 @@
     <div class="section-connector light-to-dark animated"></div>
 
     <!-- Ko-fi Section -->
-    <section id="kofi" class="kofi-section py-16 bg-white">
+    <section id="kofi" class="kofi-section py-20">
         <div class="container mx-auto px-4">
-            <div class="max-w-5xl mx-auto bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl shadow-md overflow-hidden">
-                <div class="p-8 flex flex-col lg:flex-row items-center">
-                    <img src="/public/images/power.jpg" alt="Azurukisan cosplay" 
-                        class="rounded-lg mb-6 lg:mb-0 lg:mr-8 w-full lg:w-1/3 shadow-lg transform hover:scale-105 transition duration-300">
-                    <div class="text-content lg:w-2/3 text-center lg:text-left">
-                        <h2 class="text-2xl font-semibold text-purple-600 mb-4">
-                            <i class="fas fa-heart text-pink-500 mr-2"></i> ¡Apoya mi pasión por el cosplay!
-                        </h2>
-                        <p class="text-gray-700 mb-6 text-lg">
-                            Si te gusta mi trabajo y quieres ayudarme a seguir creando, puedes apoyarme en Ko-fi. 
-                            Cada aporte significa mucho para mí y me motiva a seguir creciendo como cosplayer. 
-                            ¡Gracias por tu apoyo! 🌟
-                        </p>
-                        <iframe id='kofiframe' src='https://ko-fi.com/azurukisan/?hidefeed=true&widget=true&embed=true&preview=true' 
-                            style='border:none;width:100%;padding:4px;background:#f9f9f9;border-radius:8px;' 
-                            height='400' 
-                            title='Ko-fi de Azurukisan'>
-                        </iframe>
-                    </div>
-                </div>
+            <div class="max-w-3xl mx-auto" style="background:#232334; border-radius:2rem; padding:2.5rem 1.5rem; box-shadow:0 0 1.5rem #18182055;">
+                <h2 style="color:#ff69b4; font-size:2.7rem; font-family:'Anime Ace Bold','Anime Ace',Arial,sans-serif; text-align:center; margin-bottom:1.2rem;">¡APOYA MI PASIÓN!</h2>
+                <p style="color:#fff; font-size:1.3rem; text-align:center; margin-bottom:2rem;">
+                    Si te gusta mi trabajo y quieres ayudarme a seguir creando, puedes apoyarme en Ko-fi
+                </p>
+                <iframe id='kofiframe' src='https://ko-fi.com/azurukisan/?hidefeed=true&widget=true&embed=true&preview=true' 
+                    style='border:none;width:100%;padding:8px;background:#232334;border-radius:1rem;box-shadow:0 0 0.5rem #ff69b4;' 
+                    height='400' 
+                    title='Ko-fi de Azurukisan'>
+                </iframe>
             </div>
         </div>
     </section>
@@ -233,26 +237,22 @@
         
     
 <!-- Footer -->
-<footer class="footer bg-gray-900 text-white py-8 text-center mt-10">
+<footer class="footer py-12 text-center">
     <div class="container mx-auto px-4">
         <div class="flex flex-col items-center">
-            <img src="/public/images/ico.jpeg" alt="Azurukisan Logo" class="w-16 h-16 rounded-full mb-4">
-            <h3 class="text-xl font-bold mb-2">Azurukisan</h3>
-            <p class="text-gray-400 mb-4">Cosplayer & Content Creator</p>
+            <img src="/public/images/Frieren.jpg" alt="Azurukisan Logo" class="w-20 h-20 rounded-full mb-6 border-3 border-pink-400">
+            <h3 class="text-2xl font-bold mb-3">Azurukisan</h3>
+            <p class="mb-6 text-lg">Cosplayer & Content Creator</p>
             
-            <div class="flex space-x-4 mb-6">
-                <a href="https://instagram.com/azurukisan" target="_blank" class="text-white hover:text-purple-400 transition-colors">
-                    <i class="fab fa-instagram text-2xl"></i>
-                </a>
-                <a href="https://tiktok.com/@_azurukisan_" target="_blank" class="text-white hover:text-purple-400 transition-colors">
-                    <i class="fab fa-tiktok text-2xl"></i>
-                </a>
-                <a href="https://twitter.com/_azurukisan_" target="_blank" class="text-white hover:text-purple-400 transition-colors">
-                    <i class="fab fa-twitter text-2xl"></i>
-                </a>
+            <div class="flex space-x-6 mb-8">
+                <a href="https://instagram.com/azurukisan" target="_blank"><i class="fab fa-instagram text-3xl"></i></a>
+                <a href="https://tiktok.com/@_azurukisan_" target="_blank"><i class="fab fa-tiktok text-3xl"></i></a>
+                <a href="https://twitter.com/_azurukisan_" target="_blank"><i class="fab fa-twitter text-3xl"></i></a>
             </div>
             
-            <p class="text-sm text-gray-400">Hecho con ❤️ por <span class="font-bold">San1190</span></p>
+            <div class="border-t pt-6 w-full max-w-md">
+                <p class="text-sm">Hecho con <i class="fas fa-heart"></i> por <span class="font-bold">San1190</span></p>
+            </div>
         </div>
     </div>
 </footer>
@@ -262,6 +262,7 @@
     <script src="/public/js/calendar.js"></script>
     <script src="/public/js/easter.js"></script>
     <script src="/public/js/instagram-carousel.js"></script>
+    <script src="/public/js/kuromi-enhancements.js"></script>
 
 </body>
 </html>

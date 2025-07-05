@@ -11,36 +11,33 @@ toggleCalendarButton.addEventListener('click', () => {
   }
 });
 
+// Usamos la función initCalendar definida en admin-calendar.js
+// Esta función se carga dinámicamente cuando se importa el script
+
 
 document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-      initialView: 'dayGridMonth',
-      locale: 'es',
-      headerToolbar: {
-        left: 'prev,next today',
-        center: 'title',
-        right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
-      },
-      events: [
-        {
-          title: 'Evento 1',
-          start: '2024-03-15',
-          end: '2024-03-17',
-        },
-        {
-          title: 'Evento 2',
-          start: '2024-03-20',
-        },
-        {
-          title: 'Evento 3',
-          start: '2024-04-01',
-        },
-          {
-              title: 'Salón Comic Vlc',
-              start: '2025-02-28',
-          },
-      ]
-    });
-    calendar.render();
+    
+    // Cargar el script de administración del calendario
+    const adminScript = document.createElement('script');
+    adminScript.src = './public/js/admin-calendar.js';
+    
+    // Esperar a que el script de administración se cargue antes de inicializar el calendario
+    adminScript.onload = function() {
+      console.log('Script admin-calendar.js cargado correctamente');
+      
+      // Inicializar el calendario después de cargar el script de administración
+      if (calendarEl && typeof window.initCalendar === 'function') {
+        const calendar = window.initCalendar(calendarEl);
+        
+        // Actualizar el calendario con los eventos si está disponible la función
+        if (typeof loadEvents === 'function') {
+          calendar.removeAllEvents();
+          calendar.addEventSource(loadEvents());
+        }
+      }
+    };
+    
+    document.head.appendChild(adminScript);
+    console.log('Cargando script admin-calendar.js desde calendar.js');
   });
