@@ -1,22 +1,46 @@
 /* ===== TEMA KUROMI - SOLO MODO OSCURO ===== */
 
-body {
-    font-family: 'Inter', sans-serif;
-    background: #181820;
-    color: #f3f3f3;
-    line-height: 1.6;
-    overflow-x: hidden;
+html, body {
+    background: #181820 !important;
+    color: #fff !important;
+    min-height: 100vh;
+    width: 100vw;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box;
 }
 
-.hero, .social, .about, .portfolio, .kofi-section, .center {
+section, .section, .hero, .about, .portfolio, .kofi-section, .center, .social {
     background: #181820 !important;
-    color: #f3f3f3;
+    margin: 0 !important;
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+    border: none !important;
 }
 
 .section-connector {
-    height: 40px;
-    background: #232334;
-    border: none;
+    width: 100% !important;
+    height: 32px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    background: linear-gradient(90deg, #ff69b4 0%, #ff1493 100%) !important;
+    box-shadow: 0 0 24px 4px #ff69b4cc, 0 2px 24px 0 #ff149388;
+    position: relative !important;
+    z-index: 0 !important;
+    overflow: visible !important;
+}
+
+.section-connector::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0; right: 0; bottom: -12px;
+    height: 24px;
+    background: url('data:image/svg+xml;utf8,<svg width="100%" height="24" viewBox="0 0 100 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 12 Q25 24 50 12 T100 12 V24 H0Z" fill="%23ff69b4" fill-opacity="0.25"/></svg>');
+    background-size: 100% 100%;
+    pointer-events: none;
+    z-index: 1;
 }
 
 .text-gradient, .text-shimmer, .text-pink-600, .text-purple-600, .text-gradient, .text-pink-400, .text-purple-400 {
@@ -149,12 +173,16 @@ body {
 /* ===== HEADER Y NAVEGACIÓN ===== */
 
 .hero, .hero .container, .hero .fade-in-up {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
+    display: block !important;
     text-align: center !important;
     width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+}
+
+.hero {
+    margin-bottom: 2.5rem !important;
+    padding-top: 3.5rem !important;
 }
 
 .hero h1, .hero h2 {
@@ -165,12 +193,6 @@ body {
     white-space: normal !important;
     word-break: normal !important;
     overflow-wrap: break-word !important;
-}
-
-.hero {
-    background: var(--gradient-primary);
-    position: relative;
-    overflow: hidden;
 }
 
 .hero::before {
@@ -436,32 +458,6 @@ nav a:hover::after {
     box-shadow: var(--shadow-xl);
 }
 
-/* ===== CONECTORES DE SECCIÓN ===== */
-
-.section-connector {
-    height: 60px;
-    background: var(--gradient-primary);
-    position: relative;
-    overflow: hidden;
-}
-
-.section-connector::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><path d="M0 20 L50 0 L100 20" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"/></svg>');
-    background-size: 100% 100%;
-    animation: wave 3s ease-in-out infinite;
-}
-
-@keyframes wave {
-    0%, 100% { transform: translateX(0); }
-    50% { transform: translateX(10px); }
-}
-
 /* ===== ANIMACIONES Y EFECTOS ===== */
 
 @keyframes fadeInUp {
@@ -714,4 +710,15 @@ p, span, li, a, button, input, label, .btn, .social-button {
 section, .section {
     padding-top: 2.5rem !important;
     padding-bottom: 2.5rem !important;
+}
+
+.footer::before, .section-connector::before {
+    display: none !important;
+    content: none !important;
+    background: none !important;
+}
+
+/* Eliminar cualquier fondo blanco o gris debajo de las barras */
+.bg-white, .bg-gray-50, .bg-gradient-to-r, .bg-pink-50, .bg-purple-50 {
+    background: transparent !important;
 } 
