@@ -1,131 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/public/styles/output.css" rel="stylesheet">
+    <link href="/public/styles/kuromi-theme.css" rel="stylesheet">
     <link href="/public/styles/font&modes.css" rel="stylesheet">
     <link rel="icon" href="/public/images/ico.jpeg" type="image/png">
     <title>Preguntas Frecuentes</title>
-    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="Anime ace bg-gray-50">
-
-    <header class="hero bg-gradient-to-r from-purple-500 to-pink-500 text-white text-center py-20">
-        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
-            <!-- Logo -->
-            <img src="/public/images/ico.jpeg" alt="Logo" class="w-40 h-40 md:w-64 md:h-64 rounded-full mb-6 md:mb-0 md:mr-8">
-            
-            <!-- Texto de bienvenida -->
-            <div class="text-center md:text-left flex-1">
-                <h1 class="text-4xl md:text-6xl font-bold drop-shadow-lg">Preguntas Frecuentes</h1>
-                <p class="text-lg text-purple-600 md:text-2xl mt-4 font-light">Resuelve tus dudas sobre Azurukisan</p>
-            </div>
-        </div>
+<body style="background:#181820; font-family:'Anime Ace', Arial, sans-serif;">
+    <header class="hero text-center py-16" style="background:#232334;">
+        <img src="/public/images/Frieren.jpg" alt="Logo Frieren" style="width:8rem;height:8rem;object-fit:cover;border-radius:50%;border:3px solid #ff69b4;margin:0 auto 1.5rem auto;display:block;">
+        <h1 style="color:#ff69b4; font-size:2.7rem; font-family:'Anime Ace Bold','Anime Ace',Arial,sans-serif; text-align:center; margin-bottom:1.2rem;">Preguntas Frecuentes</h1>
+        <p style="color:#fff; font-size:1.3rem; text-align:center; margin-bottom:0.5rem;">Resuelve tus dudas sobre Azurukisan</p>
     </header>
-
-     <nav class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
-        <div class="container mx-auto flex justify-between items-center px-4 py-3">
-            <!-- Título -->
-            <div class="text-xl font-bold text-purple-600 dark:text-purple-400">Azuruki🌸</div>
-        
-            <!-- Links en pantallas grandes -->
-            <ul class="hidden md:flex space-x-6 text-gray-700 dark:text-gray-300 font-medium">
-                <li><a href="/" class="hover:text-purple-500 transition-colors">Inicio</a></li>
-                <li><a href="/#social" class="hover:text-purple-500 transition-colors">Redes</a></li>
-
+    <nav id="kuromi-nav" style="background:#181820; box-shadow:0 2px 8px #e040fb44; border-bottom:none; position:relative; z-index:10;">
+        <div style="max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; padding:1.2rem 2rem;">
+            <div style="color:#ff69b4; font-size:2rem; font-family:'Anime Ace Bold','Anime Ace',Arial,sans-serif;">Azuruki🌸</div>
+            <button id="menu-toggle" style="display:none; background:none; border:none; color:#ff69b4; font-size:2.2rem; cursor:pointer;" aria-label="Abrir menú de navegación">&#9776;</button>
+            <ul id="nav-links" style="display:flex; gap:2.5rem; font-size:1.2rem; font-family:'Anime Ace',Arial,sans-serif; margin:0; padding:0; list-style:none;">
+                <li><a href="/" class="nav-link" style="color:#fff; transition:color .2s; text-decoration:none; font-weight:bold;" onmouseover="this.style.color='#ff69b4'" onmouseout="this.style.color='#fff'">Inicio</a></li>
+                <li><a href="/#social" class="nav-link" style="color:#fff; transition:color .2s; text-decoration:none; font-weight:bold;" onmouseover="this.style.color='#ff69b4'" onmouseout="this.style.color='#fff'">Redes</a></li>
+                <li><a href="/#about" class="nav-link" style="color:#fff; transition:color .2s; text-decoration:none; font-weight:bold;" onmouseover="this.style.color='#ff69b4'" onmouseout="this.style.color='#fff'">Sobre mí</a></li>
+                <li><a href="/#portfolio" class="nav-link" style="color:#fff; transition:color .2s; text-decoration:none; font-weight:bold;" onmouseover="this.style.color='#ff69b4'" onmouseout="this.style.color='#fff'">Portafolio</a></li>
+                <li><a href="/public/pages/amazon.html" class="nav-link" style="color:#fff; transition:color .2s; text-decoration:none; font-weight:bold;" onmouseover="this.style.color='#ff69b4'" onmouseout="this.style.color='#fff'">Wishlist</a></li>
+                <li><a href="/public/pages/faq.html" class="nav-link active" style="color:#e040fb; font-weight:bold; text-shadow:0 0 8px #e040fb,0 2px 8px #ff69b4; border-bottom:2.5px solid #e040fb;">FAQ</a></li>
             </ul>
-        
-            <!-- Botón de modo oscuro -->
-             <button id="dark-mode-toggle" class="flex-shrink-0 text-purple-600 focus:outline-none px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:text-white sm:text-sm md:text-base lg:px-5 lg:py-3 xl:px-6 xl:py-4 sm:px-3" aria-label="Cambiar a modo oscuro">
-                <span class="sm:hidden">🌙</span> 
-                <span class="md:inline hidden">🌙Modo Oscuro</span> 
-            </button>
-        
-            <!-- Botón de menú para móvil -->
-            <button id="menu-toggle" class="block md:hidden text-purple-600 focus:outline-none" aria-label="Abrir menú de navegación">
-                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-            </button>
         </div>
-        
-        <!-- Links ocultos en móvil -->
-        <ul id="mobile-menu" class="hidden md:hidden flex-col space-y-4 bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-medium px-4 py-2">
-            <li><a href="/" class="hover:text-purple-500 transition-colors">Inicio</a></li>
-            <li><a href="/#social" class="hover:text-purple-500 transition-colors">Redes</a></li>
-        </ul>
+        <div style="height:4px; width:100%; background:linear-gradient(90deg,#ff69b4 0%,#e040fb 100%); box-shadow:0 2px 12px #e040fb55;"></div>
     </nav>
-
-    <main class="container mx-auto mt-10 p-5">
-    <section id="faq" class="bg-gradient-to-r from-purple-900 to-black shadow-lg rounded-lg px-4 py-8 p-6 mb-12 max-w-3xl mx-auto">
-        <h2 class="text-2xl font-bold text-white mb-4 text-center">Preguntas Frecuentes</h2>
-        <div id="chat-container" class="space-y-6">
-             <!-- Pregunta 1 -->
-            <div class="flex items-start space-x-4">
-                 <img src="/public/images/chomusuke.png" alt="User" class="w-10 h-10 rounded-full">
-                 <div class="bg-gray-100 rounded-xl p-3 border border-purple-300">
-                      <p class="text-gray-700 font-medium">¿Cuál es tu personaje favorito para hacer cosplay?</p>
-                  </div>
+    <main style="padding:3rem 1rem;">
+        <section id="faq" style="background:none; border:none; box-shadow:none; padding:0; max-width:none; margin:0 auto; display:flex; flex-direction:column; align-items:center;">
+            <div id="chat-mobile" style="width:100%; max-width:520px; min-height:350px; background:#181820; border-radius:1.5rem; box-shadow:0 0 1.5rem #e040fb44; margin:0 auto; padding:1.2rem 0.5rem 2rem 0.5rem; display:flex; flex-direction:column; gap:1.2rem; position:relative; align-items:center;">
+                <h2 style="color:#ff69b4; font-size:2.2rem; font-family:'Anime Ace Bold','Anime Ace',Arial,sans-serif; text-align:center; margin-bottom:1.2rem;">Preguntas Frecuentes</h2>
+                <!-- Pregunta 1 -->
+                <div style="display:flex; align-items:flex-end; gap:0.7rem; justify-content:flex-start; width:100%;">
+                    <img src="/public/images/chomusuke.png" alt="User" style="width:2.2rem; height:2.2rem; border-radius:50%; align-self:flex-end;">
+                    <div style="background:#232334; border:2px solid #e040fb; border-radius:1.2rem 1.2rem 1.2rem 0.4rem; padding:0.8rem 1.2rem; color:#ff69b4; font-weight:bold; font-size:1.05rem; max-width:75%; text-align:left;">¿Cuál es tu personaje favorito para hacer cosplay?</div>
+                </div>
+                <!-- Respuesta 1 -->
+                <div style="display:flex; align-items:flex-end; gap:0.7rem; justify-content:flex-end; width:100%;">
+                    <div style="background:#232334; border:2px solid #ff69b4; border-radius:1.2rem 1.2rem 0.4rem 1.2rem; padding:0.8rem 1.2rem; color:#fff; font-size:1.05rem; max-width:75%; text-align:left; background:#181820;">¡Esa es una pregunta difícil! ¡Pero creo que si tengo que elegir uno sería Megumin, me encanta el personaje!</div>
+                    <img src="/public/images/Frieren.jpg" alt="Azurukisan" style="width:2.2rem; height:2.2rem; border-radius:50%; align-self:flex-end;">
+                </div>
+                <!-- Pregunta 2 -->
+                <div style="display:flex; align-items:flex-end; gap:0.7rem; justify-content:flex-start; width:100%;">
+                    <img src="/public/images/chomusuke.png" alt="User" style="width:2.2rem; height:2.2rem; border-radius:50%; align-self:flex-end;">
+                    <div style="background:#232334; border:2px solid #e040fb; border-radius:1.2rem 1.2rem 1.2rem 0.4rem; padding:0.8rem 1.2rem; color:#ff69b4; font-weight:bold; font-size:1.05rem; max-width:75%; text-align:left;">¿Desde cuándo te gusta el mundo del cosplay?</div>
+                </div>
+                <!-- Respuesta 2 -->
+                <div style="display:flex; align-items:flex-end; gap:0.7rem; justify-content:flex-end; width:100%;">
+                    <div style="background:#232334; border:2px solid #ff69b4; border-radius:1.2rem 1.2rem 0.4rem 1.2rem; padding:0.8rem 1.2rem; color:#fff; font-size:1.05rem; max-width:75%; text-align:left; background:#181820;">¡Desde el 2021! Fue cuando hice mi primer cosplay de Krul Tepes y no he parado desde entonces!</div>
+                    <img src="/public/images/Frieren.jpg" alt="Azurukisan" style="width:2.2rem; height:2.2rem; border-radius:50%; align-self:flex-end;">
+                </div>
+                <!-- Pregunta 3 -->
+                <div style="display:flex; align-items:flex-end; gap:0.7rem; justify-content:flex-start; width:100%;">
+                    <img src="/public/images/chomusuke.png" alt="User" style="width:2.2rem; height:2.2rem; border-radius:50%; align-self:flex-end;">
+                    <div style="background:#232334; border:2px solid #e040fb; border-radius:1.2rem 1.2rem 1.2rem 0.4rem; padding:0.8rem 1.2rem; color:#ff69b4; font-weight:bold; font-size:1.05rem; max-width:75%; text-align:left;">¿Qué consejo le darías a alguien que quiera empezar en el cosplay?</div>
+                </div>
+                <!-- Respuesta 3 -->
+                <div style="display:flex; align-items:flex-end; gap:0.7rem; justify-content:flex-end; width:100%;">
+                    <div style="background:#232334; border:2px solid #ff69b4; border-radius:1.2rem 1.2rem 0.4rem 1.2rem; padding:0.8rem 1.2rem; color:#fff; font-size:1.05rem; max-width:75%; text-align:left; background:#181820;">¡Que se diviertan! Que empiecen por el personaje que más le guste y poco a poco irán mejorando! ¡Mucha suerte!</div>
+                    <img src="/public/images/Frieren.jpg" alt="Azurukisan" style="width:2.2rem; height:2.2rem; border-radius:50%; align-self:flex-end;">
+                </div>
+                <!-- Pregunta 4 -->
+                <div style="display:flex; align-items:flex-end; gap:0.7rem; justify-content:flex-start; width:100%;">
+                    <img src="/public/images/chomusuke.png" alt="User" style="width:2.2rem; height:2.2rem; border-radius:50%; align-self:flex-end;">
+                    <div style="background:#232334; border:2px solid #e040fb; border-radius:1.2rem 1.2rem 1.2rem 0.4rem; padding:0.8rem 1.2rem; color:#ff69b4; font-weight:bold; font-size:1.05rem; max-width:75%; text-align:left;">¿Dónde puedo ver más de tu trabajo?</div>
+                </div>
+                <!-- Respuesta 4 -->
+                <div style="display:flex; align-items:flex-end; gap:0.7rem; justify-content:flex-end; width:100%;">
+                    <div style="background:#232334; border:2px solid #ff69b4; border-radius:1.2rem 1.2rem 0.4rem 1.2rem; padding:0.8rem 1.2rem; color:#fff; font-size:1.05rem; max-width:75%; text-align:left; background:#181820;">¡En mis <b><a href="/#social" style="color:#e040fb; text-decoration:underline;">redes</a></b> sociales! Puedes encontrar los enlaces en el inicio de la web.</div>
+                    <img src="/public/images/Frieren.jpg" alt="Azurukisan" style="width:2.2rem; height:2.2rem; border-radius:50%; align-self:flex-end;">
+                </div>
+                <!-- Alcachofa chat -->
+                <div style="position:absolute; left:50%; bottom:0.7rem; transform:translateX(-50%); width:60px; height:8px; background:#232334; border-radius:8px; box-shadow:0 0 8px #e040fb88;"></div>
             </div>
-            <!-- Respuesta 1 -->
-            <div class="flex items-start space-x-4 flex-row-reverse text-right">
-                 <img src="/public/images/ico.jpeg" alt="Azurukisan" class="w-10 h-10 rounded-full">
-                 <div class="bg-purple-800 rounded-xl p-3 border border-purple-300">
-                      <p class="text-white font-medium">¡Esa es una pregunta difícil! ¡Pero creo que si tengo que elegir uno sería Megumin, me encanta el personaje!</p>
-                   </div>
-            </div>
-             <!-- Pregunta 2 -->
-            <div class="flex items-start space-x-4">
-                 <img src="/public/images/chomusuke.png" alt="User" class="w-10 h-10 rounded-full">
-                 <div class="bg-gray-100 rounded-xl p-3 border border-purple-300">
-                      <p class="text-gray-700 font-medium">¿Desde cuándo te gusta el mundo del cosplay?</p>
-                  </div>
-            </div>
-            <!-- Respuesta 2 -->
-            <div class="flex items-start space-x-4 flex-row-reverse text-right">
-                 <img src="/public/images/ico.jpeg" alt="Azurukisan" class="w-10 h-10 rounded-full">
-                 <div class="bg-purple-800 rounded-xl p-3 border border-purple-300">
-                      <p class="text-white font-medium">¡Desde el 2021! Fue cuando hice mi primer cosplay de Krul Tepes y no he parado desde entonces!</p>
-                   </div>
-            </div>
-            <!-- Pregunta 3 -->
-             <div class="flex items-start space-x-4">
-                 <img src="/public/images/chomusuke.png" alt="User" class="w-10 h-10 rounded-full">
-                 <div class="bg-gray-100 rounded-xl p-3 border border-purple-300">
-                      <p class="text-gray-700 font-medium">¿Qué consejo le darías a alguien que quiera empezar en el cosplay?</p>
-                  </div>
-            </div>
-            <!-- Respuesta 3 -->
-            <div class="flex items-start space-x-4 flex-row-reverse text-right">
-                 <img src="/public/images/ico.jpeg" alt="Azurukisan" class="w-10 h-10 rounded-full">
-                 <div class="bg-purple-800 rounded-xl p-3 border border-purple-300">
-                      <p class="text-white font-medium">¡Que se diviertan! Que empiecen por el personaje que más le guste y poco a poco irán mejorando! ¡Mucha suerte!</p>
-                   </div>
-            </div>
-            <!-- Pregunta 4 -->
-            <div class="flex items-start space-x-4">
-                <img src="/public/images/chomusuke.png" alt="User" class="w-10 h-10 rounded-full">
-                <div class="bg-gray-100 rounded-xl p-3">
-                     <p class="text-gray-700 font-medium">¿Donde puedo ver más de tu trabajo?</p>
-                 </div>
-           </div>
-           <!-- Respuesta 4 -->
-           <div class="flex items-start space-x-4 flex-row-reverse text-right">
-                <img src="/public/images/ico.jpeg" alt="Azurukisan" class="w-10 h-10 rounded-full">
-                <div class="bg-purple-800 rounded-xl p-3 border border-purple-300">
-                     <p class="text-white font-medium">¡En mis <b><a href="/#social" class="text-purple-300 hover:text-purple-100 transition-colors">redes</a></b> sociales! Puedes encontrar los enlaces en el inicio de la web.</p>
-                  </div>
-           </div>
-        </div>
-    </section>
-</main>
-
-    <footer class="footer bg-gray-900 text-white py-6 text-center mt-10">
-        <p class="text-sm">Hecho con ❤️ por <span class="font-bold">San1190</span></p>
+        </section>
+    </main>
+    <footer class="footer py-12" style="background:#181820; text-align:center;">
+        <img src="/public/images/Frieren.jpg" alt="Azurukisan Logo" style="width:8rem;height:8rem;object-fit:cover;border-radius:50%;border:3px solid #ff69b4;margin:0 auto 1.5rem auto;display:block;">
+        <div style="color:#ff69b4;font-size:2.2rem;font-family:'Anime Ace Bold','Anime Ace',Arial,sans-serif;margin-bottom:1rem; text-align:center;">AZURUKISAN</div>
+        <div style="color:#fff;font-size:1.3rem;font-family:'Anime Ace',Arial,sans-serif;margin-bottom:2rem; text-align:center;">COSPLAYER & CONTENT CREATOR</div>
+        <div style="color:#bdbdbd;font-size:1rem;font-family:'Anime Ace',Arial,sans-serif;opacity:0.7; text-align:center;">HECHO CON ❤ POR SAN1190</div>
     </footer>
-
-
     <script src="/public/js/script.js"></script>
+    <script src="/public/js/kuromi-enhancements.js"></script>
+    <script>
+    // Responsive nav hamburguesa
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    function checkMobileNav() {
+        if(window.innerWidth <= 900) {
+            menuToggle.style.display = 'block';
+            navLinks.style.display = 'none';
+        } else {
+            menuToggle.style.display = 'none';
+            navLinks.style.display = 'flex';
+        }
+    }
+    checkMobileNav();
+    window.addEventListener('resize', checkMobileNav);
+    menuToggle.addEventListener('click', function() {
+        if(navLinks.style.display === 'none') {
+            navLinks.style.display = 'flex';
+            navLinks.style.flexDirection = 'column';
+            navLinks.style.alignItems = 'center';
+            navLinks.style.background = '#232334';
+            navLinks.style.position = 'absolute';
+            navLinks.style.top = '100%';
+            navLinks.style.left = '0';
+            navLinks.style.width = '100%';
+            navLinks.style.gap = '2rem';
+            navLinks.style.padding = '2rem 0';
+            navLinks.style.boxShadow = '0 8px 24px #181820cc';
+            navLinks.style.zIndex = '100';
+        } else {
+            navLinks.style.display = 'none';
+        }
+    });
+    // Cerrar menú al hacer click en un link
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            if(window.innerWidth <= 900) navLinks.style.display = 'none';
+        });
+    });
+    </script>
 </body>
 </html>

@@ -8,6 +8,7 @@ html, body {
     margin: 0 !important;
     padding: 0 !important;
     box-sizing: border-box;
+    font-family: 'Anime Ace', Arial, sans-serif !important;
 }
 
 section, .section, .hero, .about, .portfolio, .kofi-section, .center, .social {
@@ -51,7 +52,10 @@ section, .section, .hero, .about, .portfolio, .kofi-section, .center, .social {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: #fff !important;
+    color: #ff69b4 !important;
+    font-family: 'Anime Ace Bold', 'Anime Ace', Arial, sans-serif !important;
+    text-align: center !important;
+    text-shadow: 0 2px 8px #e040fb55;
 }
 
 .btn, .social-button {
@@ -120,12 +124,12 @@ footer.footer {
 }
 
 a {
-    color: #ff69b4;
-    transition: color 0.2s;
+    color: #ff69b4 !important;
+    transition: color .2s;
 }
 
 a:hover {
-    color: #fff;
+    color: #e040fb !important;
 }
 
 /* Eliminar gradientes, fondos claros, y decoraciones innecesarias */
@@ -721,4 +725,33 @@ section, .section {
 /* Eliminar cualquier fondo blanco o gris debajo de las barras */
 .bg-white, .bg-gray-50, .bg-gradient-to-r, .bg-pink-50, .bg-purple-50 {
     background: transparent !important;
+}
+
+.kuromi-title {
+    text-shadow: 0 2px 8px #e040fb55;
+}
+
+.kuromi-link {
+    color: #ff69b4 !important;
+    transition: color .2s;
+}
+
+.kuromi-btn, .btn, button, input[type="submit"] {
+    background: #ff69b4 !important;
+    color: #fff !important;
+    border-radius: 1rem !important;
+    font-family: 'Anime Ace Bold', 'Anime Ace', Arial, sans-serif !important;
+    font-weight: bold !important;
+    border: 2px solid #e040fb !important;
+    box-shadow: 0 0 1rem #e040fb88 !important;
+    transition: background .2s;
+}
+
+.kuromi-btn:hover, .btn:hover, button:hover, input[type="submit"]:hover {
+    background: #e040fb !important;
+}
+
+footer {
+    background: #181820 !important;
+    color: #fff !important;
 } 
